@@ -1,41 +1,106 @@
 ---
-import Burger from "../scripts/burger.js";
+
 ---
 
-<nav id="navbar">
-  <div class="menu_icon">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+<nav id="navbar" class="navbar">
+  <div class="mobile">
+    <p>Logo</p>
+    <div class="menu_icon">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
   </div>
   <div class="menu_list">
     <ul>
-      <li><a href="/index">About Kismet</a></li>
-      <li><a href="/menu">Menu</a></li>
-      <a href="index.astro">
-        <img src="../imgs/logo.svg" alt="Logo" class="logo" />
-      </a>
-      <li><a href="/events">Events</a></li>
-      <li><a href="/collabs">Collabs</a></li>
+      <li><a href="../index">About Kismet</a></li>
+      <li><a href="../menu">Menu</a></li>
+      <a href="/index"> Logo</a>
+      <li><a href="../events">Events</a></li>
+      <li><a href="../collabs">Collabs</a></li>
     </ul>
   </div>
 </nav>
-<div class="menu_wrapper">
-  <svg class="menu_transition" viewbox="0 0 100 100" preserveAspectRatio="none">
-    <path
-      class="menu_path"
-      stroke="#701C1B"
-      fill="#701C1B"
-      stroke-width="3px"
-      vector-effect="non-scaling-stroke"
-      d="M 0 100 L 0 100 100 100 100 100 C 50 100, 50 100, 0 100"></path>
-  </svg>
 
+<div class="menu_wrapper">
   <ul class="menu_links">
     <li><a href="/index">About Kismet</a></li>
     <li><a href="/menu">Menu</a></li>
-
     <li><a href="/events">Events</a></li>
     <li><a href="/collabs">Collabs</a></li>
   </ul>
 </div>
+
+<style>
+  .mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar {
+    margin: 20px;
+  }
+  a {
+    color: var(--dark-green);
+  }
+  a:hover {
+    color: var(--light-green);
+  }
+  .menu_wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .menu_wrapper.active {
+    max-height: 100px; /* tilpass dette */
+    padding: 10rem;
+  }
+
+  .menu_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+
+  .menu_icon.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu_icon.active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu_icon.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-green);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  .menu_list {
+    display: none;
+  }
+  @media screen and (min-width: 800px) {
+    .menu_list ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      list-style: none;
+    }
+    .menu_list {
+      display: block;
+    }
+    .menu_icon {
+      display: none;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+</style>

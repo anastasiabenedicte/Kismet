@@ -1,0 +1,29 @@
+---
+const { variant, text, size } = Astro.props;
+---
+
+<button class={`${variant} ${size}`}>
+  {text}
+</button>
+
+<style>
+  button {
+    padding: 10px;
+    font-family: "Fragment Mono", monospace;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  button:hover {
+    opacity: 50%;
+  }
+  .variant_1 {
+    background-color: var(--beige);
+    border: solid 1px var(--dark-purple);
+    color: var(--dark-purple);
+  }
+  .variant_2 {
+    background-color: var(--dark-purple);
+    border: solid 1px var(--dark-purple);
+    color: var(--beige);
+  }
+</style>

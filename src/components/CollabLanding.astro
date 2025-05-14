@@ -5,18 +5,20 @@ import ButtonSquare from "./ButtonSquare.astro";
 
 <section class="collabs-section">
   <h1>COLLABS</h1>
-  <h3>Interested in doing a collab with us?</h3>
+  <p>Interested in doing a collab with us?</p>
 
   <div class="img-scroll">
-    <img src={collabgreen.src} alt="collabgrøn" />
+    <img src={collabgreen.src} alt="collabgreen" />
   </div>
 
-  <p class="collab-text">
-    Kismet is a café in the heart of Copenhagen, known for its unique vibe and
-    creative events. We love collaborating with exciting brands and individuals
-    who share our values. Feel free to reach out if you have an idea for a
-    collab - we only accept inquiries via email.
-  </p>
+  <div class="collab-wrapper">
+    <p class="collab-text">
+      Kismet is a café in the heart of Copenhagen, known for its unique vibe and
+      creative events. We love collaborating with exciting brands and
+      individuals who share our values. Feel free to reach out if you have an
+      idea for a collab - we only accept inquiries via email.
+    </p>
+  </div>
 
   <div class="contact-toggle">
     <input type="checkbox" id="contact-toggle" hidden />
@@ -30,19 +32,36 @@ import ButtonSquare from "./ButtonSquare.astro";
     </div>
   </div>
 
-  <p>We are looking forward to hear from you:)</p>
+  <h3>We are looking forward to hear from you:)</h3>
   <hr />
 
   <style>
     .img-scroll {
-      width: 300px;
+      width: 250px;
       border-radius: 10px;
       border: 8px solid var(--light-green);
       box-shadow: 0 5px 15px var(--plum);
+      margin: 70px;
+      place-self: center;
     }
 
     h1 {
       color: var(--light-purple);
+    }
+    h3 {
+      color: var(--light-green);
+    }
+    p {
+      margin-top: -30px;
+    }
+
+    .collab-wrapper {
+    }
+
+    .collab-text {
+      text-align: left;
+      line-height: 2rem;
+      padding: 2rem;
     }
 
     .contact-toggle {

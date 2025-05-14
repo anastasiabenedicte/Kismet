@@ -1,7 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-
-import collabgreen from "../img/collab_asicsgrøn.webp";
+import CollabLanding from "../components/CollabLanding.astro";
 
 import ButtonSquare from "../components/ButtonSquare.astro";
 
@@ -9,70 +8,7 @@ const title = "collaboration";
 ---
 
 <MainLayout {title}>
-  <section class="collabs-section">
-    <h1>COLLABS</h1>
-    <h3>Interested in doing a collab with us?</h3>
 
-    <div class="img-scroll">
-      <img src={collabgreen.src} alt="collabgrøn" />
-    </div>
+  <CollabLanding />
 
-    <p class="collab-text">
-      Kismet is a café in the heart of Copenhagen, known for its unique vibe and
-      creative events. We love collaborating with exciting brands and
-      individuals who share our values. Feel free to reach out if you have an
-      idea for a collab - we only accept inquiries via email.
-    </p>
-
-    <div class="contact-toggle">
-      <input type="checkbox" id="contact-toggle" hidden />
-
-      <ButtonSquare
-        text="Contact us"
-        variant="variant_1"
-        size="medium"
-        id="contact-toggle"
-      />
-
-      <div id="contact-box" class="contact-box">
-        <p>Email: kontakt@kismet.dk</p>
-        <p>Instagram: @kismetcph</p>
-        <p>Adresse: Adelgade, KBH K</p>
-      </div>
-    </div>
-
-    <p>We are looking forward to hear from you:)</p>
-    <hr />
-  </section>
-
-  <style>
-    .img-scroll {
-      width: 300px;
-      border-radius: 10px;
-      border: 4px solid var(--light-green);
-      box-shadow: 0 4px 10px var(--plum);
-    }
-
-    h1 {
-      color: var(--light-purple);
-    }
-
-    .contact-box {
-      margin-top: 1rem;
-      padding: 1rem;
-      background-color: var(--light-purple);
-      border: 1px solid var(--dark-purple);
-      color: var(--black);
-      display: none;
-      transition: all 0.3s ease;
-    }
-
-    #contact-toggle:checked ~ .contact-box {
-      display: block;
-    }
-
-    .contact-toggle {
-      margin-top: 2rem;
-    }
-  </style>
 </MainLayout>

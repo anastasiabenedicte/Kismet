@@ -1,13 +1,19 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
+import collabgreen from "../img/collab_asicsgrøn.webp";
+
 const title = "collaboration";
 ---
 
 <MainLayout {title}>
   <section class="collabs-section">
     <h1>COLLABS</h1>
-    <h2>Interested in doing a collab with us?</h2>
+    <h3>Interested in doing a collab with us?</h3>
+
+    <div class="img-scroll">
+      <img src={collabgreen.src} alt="collabgrøn" />
+    </div>
 
     <p class="collab-text">
       Kismet is a café in the heart of Copenhagen, known for its unique vibe and
@@ -16,12 +22,24 @@ const title = "collaboration";
       idea for a collab - we only accept inquiries via email.
     </p>
 
-    <div class="image-box">
-      <img src="/img/collab-drink.png" alt="Green drink with ASICS logo" />
-    </div>
-
     <a class="square-button" href="mailto:kontakt@kismet.dk"
       >Contact us for collab ⬇</a
     >
+
+    <p>We are looking forward to hear from you:)</p>
+    <hr />
   </section>
+
+  <style>
+    .img-scroll {
+      width: 300px;
+      border-radius: 10px;
+      border: 4px solid var(--light-green);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: var(--light-purple);
+    }
+  </style>
 </MainLayout>

@@ -1,28 +1,28 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-:root{
-    --white: #f0ebd5;
-    --black: #2c2c2c;
-    --beige: #f3ece2;
-    --light-purple: #b5addf;
-    --dark-purple: #4a426b;
-    --light-green: #8c9d60;
-    --dark-green: #3d4b19;
-    --plum: #4d0e28;
+:root {
+  --white: #f0ebd5;
+  --black: #2c2c2c;
+  --beige: #f3ece2;
+  --light-purple: #b5addf;
+  --dark-purple: #4a426b;
+  --light-green: #8c9d60;
+  --dark-green: #3d4b19;
+  --plum: #4d0e28;
 }
 
-body{
-    background-color: var(--beige);
+body {
+  background-color: var(--beige);
 }
 
 .gloria-hallelujah-regular {
@@ -43,29 +43,28 @@ body{
   font-style: italic;
 }
 
-
-h1{
-    font-family: "Gloria Hallelujah", cursive;
-    font-size: 5rem;
+h1 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 5rem;
 }
 
-h2{
-    font-family: "Fragment Mono", monospace;
-    font-size: 2.5rem;
+h2 {
+  font-family: "Fragment Mono", monospace;
+  font-size: 2.5rem;
 }
 
-h3{
-    font-family: "Fragment Mono", monospace;
-    font-size: 2rem;
+h3 {
+  font-family: "Fragment Mono", monospace;
+  font-size: 2rem;
 }
 
-p{
-    font-family: "Fragment Mono", monospace;
-    font-size: 1.5rem;
+p {
+  font-family: "Fragment Mono", monospace;
+  font-size: 1rem;
 }
 
-a{
-    font-family: "Fragment Mono", monospace;
-    text-transform: uppercase;
-    text-decoration: none;
+a {
+  font-family: "Fragment Mono", monospace;
+  text-transform: uppercase;
+  text-decoration: none;
 }

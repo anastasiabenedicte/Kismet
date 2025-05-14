@@ -1,0 +1,41 @@
+---
+import ButtonRound from "./ButtonRound.astro";
+---
+
+<a href="">
+  <article>
+    <div class="flex_box">
+      <p>2.Mai, 2025</p>
+      <ButtonRound text="dj" variant="variant_1" />
+    </div>
+    <h1>P</h1>
+    <h3>Bouger Bouger</h3>
+    <p>
+      Join us to enjoy amazing music from dj Bouger Bouger. We provide the music
+      you provide the good vibes!!
+    </p>
+    <ButtonRound text="Read More" variant="variant_1" />
+  </article>
+</a>
+<style>
+  article {
+    position: relative;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    border: solid 1px var(--light-purple);
+    padding: 2vh 4vh 2vh 4vh;
+    gap: 1rem;
+  }
+  .flex_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+</style>

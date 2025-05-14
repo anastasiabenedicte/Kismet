@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 import collabgreen from "../img/collab_asicsgrøn.webp";
 
+import ButtonSquare from "../components/ButtonSquare.astro";
+
 const title = "collaboration";
 ---
 
@@ -22,9 +24,22 @@ const title = "collaboration";
       idea for a collab - we only accept inquiries via email.
     </p>
 
-    <a class="square-button" href="mailto:kontakt@kismet.dk"
-      >Contact us for collab ⬇</a
-    >
+    <div class="contact-toggle">
+      <input type="checkbox" id="contact-toggle" hidden />
+
+      <ButtonSquare
+        text="Contact us"
+        variant="variant_1"
+        size="medium"
+        id="contact-toggle"
+      />
+
+      <div id="contact-box" class="contact-box">
+        <p>Email: kontakt@kismet.dk</p>
+        <p>Instagram: @kismetcph</p>
+        <p>Adresse: Adelgade, KBH K</p>
+      </div>
+    </div>
 
     <p>We are looking forward to hear from you:)</p>
     <hr />
@@ -40,6 +55,24 @@ const title = "collaboration";
 
     h1 {
       color: var(--light-purple);
+    }
+
+    .contact-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: var(--light-purple);
+      border: 1px solid var(--dark-purple);
+      color: var(--black);
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    #contact-toggle:checked ~ .contact-box {
+      display: block;
+    }
+
+    .contact-toggle {
+      margin-top: 2rem;
     }
   </style>
 </MainLayout>

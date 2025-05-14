@@ -37,8 +37,8 @@ import ButtonSquare from "./ButtonSquare.astro";
     .img-scroll {
       width: 300px;
       border-radius: 10px;
-      border: 4px solid var(--light-green);
-      box-shadow: 0 4px 10px var(--plum);
+      border: 8px solid var(--light-green);
+      box-shadow: 0 5px 15px var(--plum);
     }
 
     h1 {
@@ -51,12 +51,13 @@ import ButtonSquare from "./ButtonSquare.astro";
 
     .contact-box {
       margin-top: 1rem;
-      padding: 1rem;
+      padding: 2rem;
       background-color: var(--light-purple);
-      border: 1px solid var(--dark-purple);
+      border: 4px solid var(--dark-purple);
+      border-radius: 10px;
       color: var(--black);
       display: none;
-      transition: all 0.3s ease;
+      transition: all 0.8s ease;
     }
 
     #contact-toggle:checked ~ .contact-box {

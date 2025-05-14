@@ -1,0 +1,48 @@
+---
+import ButtonRound from "./ButtonRound.astro";
+const { text, name, color, path } = Astro.props;
+---
+
+<a href={"/products/" + path}>
+  <article class=`${color}`>
+    <div class="flex_box">
+      <p>2.Mai, 2025</p>
+      <ButtonRound text="dj" variant="variant_1" />
+    </div>
+    <h1>P</h1>
+    <h3>{name}</h3>
+    <p>
+      {text}
+    </p>
+    <ButtonRound text="Read More" variant="variant_1" />
+  </article>
+</a>
+<style>
+  article {
+    position: relative;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    border: solid 1px var(--light-purple);
+    padding: 2vh 4vh 2vh 4vh;
+    gap: 1rem;
+    height: 100%;
+  }
+  .flex_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .green p,
+  .green h1,
+  .green h3,
+  .green button {
+    color: var(--dark-green);
+  }
+</style>

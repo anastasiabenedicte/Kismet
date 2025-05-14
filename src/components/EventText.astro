@@ -1,0 +1,16 @@
+---
+const { text } = Astro.props;
+---
+
+<p>{text}</p>
+
+<style>
+  p {
+    color: var(--dark-green);
+  }
+  @media screen and (min-width: 800px) {
+    p {
+      margin: 0vh 50vh 0vh 0vh;
+    }
+  }
+</style>

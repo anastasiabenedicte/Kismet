@@ -2,6 +2,7 @@
 const { title } = Astro.props;
 import "../styles/style.css";
 import "../styles/layout.css";
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -26,6 +27,7 @@ import "../styles/layout.css";
   </head>
   <body>
     <main>
+      <Header />
       <slot />
     </main>
     <script src="/scripts/burger.js" defer></script>

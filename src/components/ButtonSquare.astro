@@ -1,0 +1,34 @@
+---
+const { variant, text, size, id } = Astro.props;
+---
+
+<label for={id} class={`button-square ${variant} ${size}`}>
+  {text}
+</label>
+
+<style>
+  .button-square {
+    display: inline-block;
+    padding: 10px;
+    font-family: "Fragment Mono", monospace;
+    border-radius: 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .button-square:hover {
+    opacity: 50%;
+  }
+
+  .variant_1 {
+    background-color: var(--beige);
+    border: solid 1px var(--dark-purple);
+    color: var(--dark-purple);
+  }
+
+  .variant_2 {
+    background-color: var(--dark-purple);
+    border: solid 1px var(--dark-purple);
+    color: var(--beige);
+  }
+</style>

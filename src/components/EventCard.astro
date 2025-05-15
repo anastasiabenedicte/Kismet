@@ -1,18 +1,31 @@
 ---
+/*
+curl 'https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/Events?select=*' \
+-H "apikey: SUPABASE_CLIENT_ANON_KEY" \
+-H "Authorization: Bearer SUPABASE_CLIENT_ANON_KEY"
+          */
 import ButtonRound from "./ButtonRound.astro";
-const { text, name, color, path } = Astro.props;
+const { text, product } = Astro.props;
+const url = "https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/events";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVncXlqZ2xwcXZsbnhyaXpydml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyOTY1MjgsImV4cCI6MjA2Mjg3MjUyOH0.o34_Vq2MYjWQWAExvv8dp2e5I5p6bE7UNxj3s36Boz0";
+
+const options = { headers: { apikey: key } };
+const data = await fetch(url, options).then((res) => res.json());
+
+console.log(data);
 ---
 
-<a href={"/products/" + path}>
-  <article class=`${color}`>
+<a href={`./products/${product.event_slug}`}>
+  <article>
     <div class="flex_box">
-      <p>2.Mai, 2025</p>
-      <ButtonRound text="dj" variant="variant_1" />
+      <p>{product.event_date}</p>
+      <ButtonRound text={product.event_type} variant="variant_1" />
     </div>
-    <h1>P</h1>
-    <h3>{name}</h3>
+    <img src={`../img/${product.event_image}`} alt="placeholder" />
+    <h3>{product.event_title}</h3>
     <p>
-      {text}
+      {product.event_text}
     </p>
     <ButtonRound text="Read More" variant="variant_1" />
   </article>

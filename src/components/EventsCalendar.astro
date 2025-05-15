@@ -1,6 +1,14 @@
 ---
 import EventCard from "./EventCard.astro";
 import ButtonRound from "./ButtonRound.astro";
+const url = "https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/events";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVncXlqZ2xwcXZsbnhyaXpydml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyOTY1MjgsImV4cCI6MjA2Mjg3MjUyOH0.o34_Vq2MYjWQWAExvv8dp2e5I5p6bE7UNxj3s36Boz0";
+
+const options = { headers: { apikey: key } };
+const data = await fetch(url, options).then((res) => res.json());
+
+console.log(data);
 ---
 
 <nav>
@@ -13,45 +21,7 @@ import ButtonRound from "./ButtonRound.astro";
     <ButtonRound text="Dinner" variant="variant_1" />
   </div>
 </nav>
-<ul>
-  <EventCard
-    path="Dance Party"
-    name="Dance Party"
-    text="Join us for an amazing evening with dancing and drinks. We’ve invited DJ Bouger Bouger to bring the vibes. Everyone is welcome!"
-  />
-  <EventCard
-    color="green"
-    name="Dinner Night"
-    text="Come share a cozy evening with us! We're serving up a delicious seasonal dinner — great food, good company, and warm conversation."
-  />
-  <EventCard
-    name="Run Club"
-    text="Lace up and join the Run Club! Whether you're a seasoned runner or just getting started, this is about moving together and feeling good."
-  />
-  <EventCard
-    color="green"
-    name="Game Night"
-    text="It’s game night! Bring your competitive spirit (and maybe some snacks). From card games to strategy, we’ve got something for everyone."
-  />
-  <EventCard
-    name="Art Workshop"
-    text="Get creative with us at our community art workshop! All materials provided — just bring your imagination."
-  />
-  <EventCard
-    color="green"
-    name="Open Mic"
-    text="Step up to the mic! Share your poetry, comedy, or music at our open mic night. Everyone gets a chance to shine."
-  />
-  <EventCard
-    name="Evening Yoga"
-    text="Unwind and reset with our evening yoga session. Bring a mat and breathe deep — all levels welcome."
-  />
-  <EventCard
-    color="green"
-    name="Mystery Event"
-    text="Surprise event! We’re planning something special — stay tuned. You won’t want to miss it!"
-  />
-</ul>
+<ul>{data.map((product) => <EventCard {product} />)}</ul>
 <style>
   ul {
     padding: 2vh 0 0 0;

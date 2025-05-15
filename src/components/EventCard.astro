@@ -16,13 +16,13 @@ const data = await fetch(url, options).then((res) => res.json());
 console.log(data);
 ---
 
-<a href="">
+<a href={`./products/${product.event_slug}`}>
   <article>
     <div class="flex_box">
       <p>{product.event_date}</p>
       <ButtonRound text={product.event_type} variant="variant_1" />
     </div>
-    <img src="../img/about_landing.png" alt="placeholder" />
+    <img src={`../img/${product.event_image}`} alt="placeholder" />
     <h3>{product.event_title}</h3>
     <p>
       {product.event_text}

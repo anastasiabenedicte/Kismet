@@ -6,6 +6,25 @@ curl 'https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/Events?select=*' \
           */
 import ButtonRound from "./ButtonRound.astro";
 const { text, product } = Astro.props;
+
+export async function getStaticPaths() {
+  const { slug } = Astro.params;
+
+  const fetchURL = `https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/events=eq.${slug}&select=event_slug`;
+
+  const response = await fetch(fetchURL, {
+    headers: {
+      apiKey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVncXlqZ2xwcXZsbnhyaXpydml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyOTY1MjgsImV4cCI6MjA2Mjg3MjUyOH0.o34_Vq2MYjWQWAExvv8dp2e5I5p6bE7UNxj3s36Boz0",
+    },
+  });
+
+  const data = await response.json();
+
+  return { props: { event: data[0] } };
+}
+
+/*
 const url = "https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/events";
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVncXlqZ2xwcXZsbnhyaXpydml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyOTY1MjgsImV4cCI6MjA2Mjg3MjUyOH0.o34_Vq2MYjWQWAExvv8dp2e5I5p6bE7UNxj3s36Boz0";
@@ -14,6 +33,7 @@ const options = { headers: { apikey: key } };
 const data = await fetch(url, options).then((res) => res.json());
 
 console.log(data);
+*/
 ---
 
 <a href={`./products/${product.event_slug}`}>

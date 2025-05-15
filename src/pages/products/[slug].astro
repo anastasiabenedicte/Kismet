@@ -28,6 +28,7 @@ const { event, variant } = Astro.props;
 ---
 
 <MainLayout>
+  <ButtonRound text="Back to all events" variant="variant_1" />
   <section class="grid_1-1">
     <div class="img_container">
       <img src={`../img/${event.event_image}`} alt="placeholder" />
@@ -42,8 +43,19 @@ const { event, variant } = Astro.props;
 </MainLayout>
 
 <style>
-  h1 {
+  .text_box {
     color: var(--dark-green);
+  }
+  h1 {
     font-size: 3rem;
+  }
+  img {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+    align-self: stretch;
+  }
+  .grid_1-1 {
+    margin: 2vh 0 2vh 0;
   }
 </style>

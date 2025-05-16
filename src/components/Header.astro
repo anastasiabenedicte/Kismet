@@ -28,10 +28,10 @@
 
 <div class="menu_wrapper">
   <ul class="menu_links">
-    <li><a href="/about">About Kismet</a></li>
-    <li><a href="/menu">Menu</a></li>
-    <li><a href="/events">Events</a></li>
-    <li><a href="/collabs">Collabs</a></li>
+    <li><a href="/about">About Kismet<span>01</span></a></li>
+    <li><a href="/menu"><span>02</span>Menu</a></li>
+    <li><a href="/events">Events<span>03</span></a></li>
+    <li><a href="/collabs"><span>04</span>Collabs</a></li>
   </ul>
 </div>
 
@@ -56,6 +56,11 @@
   .navbar {
     margin: 20px;
   }
+  span {
+    font-family: "Fragment Mono", monospace;
+    margin: 2vh;
+    font-size: 1rem;
+  }
   a {
     color: var(--dark-green);
   }
@@ -63,17 +68,43 @@
     color: var(--light-green);
   }
   .menu_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
+    background-color: var(--dark-green);
+    z-index: 999;
   }
 
   .menu_wrapper.active {
-    max-height: 100px; /* tilpass dette */
-    padding: 10rem;
+    min-height: 100vh;
+    padding: 20vh 0 0 0; /* tilpass dette */
+  }
+  .menu_links a {
+    color: var(--light-purple);
+    font-family: "Gloria Hallelujah", cursive;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .menu_links a:hover {
+    color: var(--light-green);
+  }
+  .menu_links li {
+    list-style: none;
   }
 
   .menu_icon {
+    position: relative;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -90,6 +121,7 @@
 
   .menu_icon.active .line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--light-purple);
   }
 
   .line {

@@ -4,7 +4,9 @@
 
 <nav id="navbar" class="navbar">
   <div class="mobile">
-    <p>Logo</p>
+    <a href="/index.html" class="logo"
+      ><img src="/img/logo.webp" alt="logo" /></a
+    >
     <div class="menu_icon">
       <div class="line"></div>
       <div class="line"></div>
@@ -15,7 +17,9 @@
     <ul>
       <li><a href="../about">About Kismet</a></li>
       <li><a href="../menu">Menu</a></li>
-      <a href="/index.html"> Logo</a>
+      <a href="/index.html" class="logo"
+        ><img src="/img/logo.webp" alt="logo" /></a
+      >
       <li><a href="../events">Events</a></li>
       <li><a href="../collab">Collabs</a></li>
     </ul>
@@ -32,6 +36,18 @@
 </div>
 
 <style>
+  .logo {
+    height: auto;
+    width: 25vh;
+  }
+  .logo:hover {
+    opacity: 50%;
+  }
+  img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    align-self: stretch;
+  }
   .mobile {
     display: flex;
     justify-content: space-between;
@@ -90,7 +106,7 @@
     .menu_list ul {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       list-style: none;
     }
     .menu_list {

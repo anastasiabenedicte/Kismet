@@ -28,37 +28,62 @@ const { event, variant } = Astro.props;
 ---
 
 <MainLayout>
-  <ButtonRound text="Back to all events" variant="variant_1" />
+  <a href="../events">
+    <ButtonRound text="Back to all events" variant="variant_3" />
+  </a>
   <section class="grid_1-1">
     <div class="img_container">
       <img src={`/img/${event.event_image}`} alt="placeholder" />
     </div>
     <div class="text_box">
-      <p>{event.event_date}</p>
+      <p class="date">{event.event_date}</p>
       <h1>{event.event_title}</h1>
       <p>{event.event_text}</p>
-      <ButtonRound text="Add to calendar" variant="variant_1" />
+      <ButtonRound text="Add to calendar" variant="variant_3" />
     </div>
   </section>
 </MainLayout>
 
 <style>
   .text_box {
-    color: var(--dark-green);
+    background-color: var(--dark-green);
+    color: var(--beige);
+    padding: 5vh;
+    box-shadow: 10px 10px var(--light-green);
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   p {
-    margin:;
+    margin: 2vh 0 3vh 0;
+  }
+  .date {
+    margin-bottom: -1.5vh;
+    font-size: 0.9rem;
   }
   img {
     height: 60vh;
     width: 100%;
     object-fit: cover;
     align-self: stretch;
+    box-shadow: 10px 10px var(--light-green);
   }
   .grid_1-1 {
     margin: 2vh 0 2vh 0;
+    gap: 5vh;
+  }
+  @media screen and (min-width: 800px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .text_box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    h1 {
+      font-size: 3rem;
+    }
   }
 </style>

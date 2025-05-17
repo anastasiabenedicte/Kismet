@@ -32,7 +32,7 @@ import CollabSlide from "./CollabSlide.astro";
   </div>
 </div>
 
-<p>We are looking forward to hear from you:)</p>
+<p class="lookingforw">We are looking forward to hear from you:)</p>
 
 <hr />
 
@@ -54,14 +54,25 @@ import CollabSlide from "./CollabSlide.astro";
     color: var(--light-green);
   }
 
+  p {
+    color: var(--dark-green);
+  }
+
   .collab-text {
     text-align: left;
-    line-height: 2rem;
-    padding: 2rem;
+    max-width: 700px;
+    line-height: 1.8;
+    margin-top: 60px;
+    color: var(--dark-green);
+  }
+
+  .lookingforw {
+    color: var(--dark-purple);
   }
 
   .contact-toggle {
-    margin-top: 2rem;
+    margin: 3rem;
+    place-self: center;
   }
 
   .contact-box {

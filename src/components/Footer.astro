@@ -2,5 +2,127 @@
 
 ---
 
-<h1>tihi hej</h1>
-<p>jjndkajsbdkjasbdkabsdkhja</p>
+<footer>
+  <div class="footer-container">
+    <section>
+      <h2>Opening hours</h2>
+      <div class="hours">
+        <div>MONDAY:</div><div>CLOSED</div>
+        <div>TUESDAY:</div><div>7.30 - 18.00</div>
+        <div>WEDNESDAY:</div><div>7.30 - 18.00</div>
+        <div>THURSDAY:</div><div>7.30 - 18.00</div>
+        <div>FRIDAY:</div><div>7.30 - 18.00</div>
+        <div>SATURDAY:</div><div>9.00 - 18.00</div>
+        <div>SUNDAY:</div><div>9.00 - 15.00</div>
+      </div>
+      <p>(BREAKFAST ALL DAY)</p>
+    </section>
+   <section>
+  <h3>Information</h3>
+  <p><a href="/about">About</a></p>
+  <p><a href="#" class="no-link">Contact</a></p>
+</section>
+    <section class="location">
+      <h3>Location</h3>
+      <a
+        href="https://www.google.com/maps/dir/?api=1&destination=Adelgade+16%2C+1304+Copenhagen+Denmark"
+        target="_blank"
+      >
+        Adelgade 16, 1304 KBH K
+      </a>
+    </section>
+    <section class="socials">
+      <h3>Socials</h3>
+      <a href="https://www.instagram.com/kea_kismet_eksamen/">Instagram</a>
+    </section>
+  </div>
+</footer>
+
+<style>
+  .hours {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.5rem 2rem;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+  .hours > div {
+    text-align: left;
+    min-width: 8rem;
+  }
+  .hours li {
+    list-style: none;
+    margin: 0.5rem 0;
+    letter-spacing: 0.1rem;
+  }
+  footer {
+    background-image: url("/public/img/footer.webp");
+    background-size: cover;
+    background-position: center;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    color: #3d4b19;
+  }
+  h2 {
+    font-weight: 200;
+    font-style: italic;
+    font-size: xx-large;
+    padding-top: 9rem;
+    padding-bottom: 2rem;
+    letter-spacing: 0.2rem;
+  }
+  h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 200;
+    font-size: x-large;
+    font-style: italic;
+    letter-spacing: 0.2rem;
+  }
+  section a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.no-link {
+  cursor: default; /* så det ikke viser hånd-ikon ved hover */
+  pointer-events: none; /* gør linket ikke klikbart */
+}
+  .socials {
+    padding-bottom: 10rem;
+  }
+  .socials a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+  }
+  .location a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+  }
+
+  p {
+    margin: 1rem;
+  }
+  @media screen and (min-width: 800px) {
+    footer {
+      background-repeat: repeat-x;
+      background-size: auto 100%;
+      background-position: center bottom;
+      width: 100%;
+      padding: 4rem 0;
+    }
+     .socials {
+    padding-bottom: 6rem;
+  }
+    h2 {
+    padding-top: 5rem
+</style>

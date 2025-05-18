@@ -4,21 +4,46 @@ import CollabSlide from "./CollabSlide.astro";
 ---
 
 <section class="collabs-section">
-  <h1>COLLABS</h1>
+  <div class="collab-text-side">
+    <h1>COLLABS</h1>
+    <p>Interested in doing a collab with us?</p>
+  </div>
 
-  <p>Interested in doing a collab with us?</p>
+  <div class="collab-flexbox">
+    <!-- TEKST FØRST = VENSTRE på desktop -->
+    <div class="collab-wrapper">
+      <p class="collab-text">
+        Kismet is a café in the heart of Copenhagen, known for its unique vibe
+        and creative events. We love collaborating with exciting brands and
+        individuals who share our values. Feel free to reach out if you have an
+        idea for a collab - we only accept inquiries via email.
+      </p>
+    </div>
 
-  <CollabSlide />
+    <!-- SLIDER EFTER = HØJRE på desktop -->
+    <div class="collab-slide">
+      <CollabSlide />
+    </div>
+  </div>
 </section>
 
-<div class="collab-wrapper">
+<!-- <section class="collabs-section">
+  <div class="collab-text-side">
+    <h1>COLLABS</h1>
+
+    <p>Interested in doing a collab with us?</p>
+  </div>
+  <CollabSlide />
+</section> -->
+
+<!-- <div class="collab-wrapper">
   <p class="collab-text">
     Kismet is a café in the heart of Copenhagen, known for its unique vibe and
     creative events. We love collaborating with exciting brands and individuals
     who share our values. Feel free to reach out if you have an idea for a
     collab - we only accept inquiries via email.
   </p>
-</div>
+</div> -->
 
 <div class="contact-toggle">
   <input type="checkbox" id="contact-toggle" hidden />
@@ -37,6 +62,13 @@ import CollabSlide from "./CollabSlide.astro";
 <hr />
 
 <style>
+  .collab-flexbox {
+    display: flex;
+    flex-direction: column-reverse; /* MOBIL: slider først */
+    gap: 2rem;
+    padding: 2rem;
+  }
+
   .img-scroll {
     width: 250px;
     border-radius: 10px;
@@ -97,5 +129,26 @@ import CollabSlide from "./CollabSlide.astro";
   }
   #contact-toggle:checked ~ .contact-box {
     display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .collab-flexbox {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-inline: 2rem;
+    }
+
+    .collab-wrapper {
+      flex: 1;
+      padding: 0;
+    }
+
+    .collab-slide {
+      max-width: 400px;
+      flex-shrink: 0;
+    }
   }
 </style>

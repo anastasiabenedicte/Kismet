@@ -55,7 +55,7 @@ import CollabSlide from "./CollabSlide.astro";
   }
 
   p {
-    color: var(--beige);
+    color: var(--plum);
   }
 
   .collab-text {
@@ -63,16 +63,19 @@ import CollabSlide from "./CollabSlide.astro";
     max-width: 700px;
     line-height: 1.8;
     margin-top: 60px;
-    color: var(--beige);
+    color: var(--dark-green);
   }
 
   .lookingforw {
-    color: var(--light-purple);
+    color: var(--plum);
   }
 
   .contact-toggle {
-    margin: 3rem;
-    place-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem auto;
   }
 
   .contact-box {
@@ -89,6 +92,9 @@ import CollabSlide from "./CollabSlide.astro";
     transition: all 0.8s ease;
   }
 
+  .contact-box p {
+    color: var(--beige);
+  }
   #contact-toggle:checked ~ .contact-box {
     display: block;
   }

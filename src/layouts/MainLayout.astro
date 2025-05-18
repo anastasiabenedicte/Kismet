@@ -37,10 +37,19 @@ import Footer from "../components/Footer.astro";
 </html>
 
 <style>
-  body.background_singel {
+  body.background_singel::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background-image: url("/img/singel_background.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0.5; /* Adjust here */
+    z-index: -1;
+    pointer-events: none;
   }
 </style>

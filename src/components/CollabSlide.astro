@@ -19,12 +19,15 @@ const images = [
 ];
 ---
 
-<div class="slide-box">
-  <div class="slide">
-    <div class="img-wrap">
-      <img id="slide-img" src={images[0]} alt="collab slide" />
+<div class="slide-wrapper">
+  <div class="slide-box">
+    <div class="slide">
+      <div class="img-wrap">
+        <img id="slide-img" src={images[0]} alt="collab slide" />
+      </div>
     </div>
   </div>
+  <img class="doodle-overlay" src="/img/collab_doodle_3.webp" alt="doodle" />
 </div>
 <div class="slide-buttons">
   <button id="prev-btn">←</button>
@@ -45,6 +48,17 @@ const images = [
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+  }
+
+  @keyframes doodleFloat {
+    0%,
+    100% {
+      transform: rotate(-8deg) translateY(0px);
+    }
+    50% {
+      transform: rotate(-8deg) translateY(-6px);
+    }
   }
 
   .img-wrap {
@@ -53,7 +67,8 @@ const images = [
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: relative;
   }
 
   .img-wrap img {
@@ -62,6 +77,34 @@ const images = [
     object-fit: cover;
     transition: opacity 0.3s ease-in-out;
     border-radius: 4px;
+  }
+
+  .slide-wrapper {
+    position: relative; /* 💥 Nu kan doodle placeres FRI ovenpå alt */
+    width: fit-content;
+    margin: auto;
+  }
+
+  .doodle-overlay {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 180px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    transform: rotate(-8deg);
+    animation: doodleFloat 4s ease-in-out infinite;
+  }
+
+  @keyframes doodleFloat {
+    0%,
+    100% {
+      transform: rotate(-8deg) translateY(0px);
+    }
+    50% {
+      transform: rotate(-8deg) translateY(-6px);
+    }
   }
 
   .slide-buttons {
@@ -105,6 +148,12 @@ const images = [
       gap: 3rem;
       margin-bottom: 2rem;
       margin-right: 110px;
+    }
+    .doodle-overlay {
+      position: absolute;
+      top: -50px;
+      right: 40px;
+      width: 190px;
     }
   }
 </style>

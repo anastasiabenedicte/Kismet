@@ -1,15 +1,21 @@
 ---
+const { product } = Astro.props;
+const url = "https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/menu";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVncXlqZ2xwcXZsbnhyaXpydml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyOTY1MjgsImV4cCI6MjA2Mjg3MjUyOH0.o34_Vq2MYjWQWAExvv8dp2e5I5p6bE7UNxj3s36Boz0";
 
+const options = { headers: { apikey: key } };
+const data = await fetch(url, options).then((res) => res.json());
+
+console.log(data);
 ---
 
 <article>
-  <h1>Matcha</h1>
-  <p class="price">price</p>
-  <img src="/img/menu_plate_1.webp" alt="placeholder" />
+  <h1>{product.menu_title}</h1>
+  <p class="price">{product.price} DKK</p>
+  <img src={`/img/${product.image}`} alt="placeholder" />
   <p>
-    Matcha Yamabuki er en premium kulinarisk japansk matcha, produceret af
-    Hoshino-Seichaen en familiedrevet virksomhed lokaliseret i Hoshino, Yame,
-    Fukuoka.
+    {product.menu_text}
   </p>
 </article>
 

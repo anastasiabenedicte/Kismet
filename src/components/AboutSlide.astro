@@ -1,9 +1,9 @@
 ---
 const images = ["img/about-3.webp", "img/about-1.webp", "img/about-2.webp"];
 const captions = [
-    "\"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors.\"",
+  '"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors."',
   "Meet Hugo, baker at KISMET.",
-  "This is Adam. Cofounder of KISMET."
+  "This is Adam. Cofounder of KISMET.",
 ];
 
 let currentIndex = 0;
@@ -28,12 +28,16 @@ let currentIndex = 0;
   </button>
 </div>
 
-<script type="module" is:inline>
-  const images = ["img/about-3.webp", "img/about-1.webp", "img/about-2.webp"];
+<script src="/scripts/aboutslide.js" type="module" is:inline>
+  const images = [
+    "/img/about-3.webp",
+    "/img/about-1.webp",
+    "/img/about-2.webp",
+  ];
   const captions = [
-    "\"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors.\"",
-  "Meet Hugo, baker at KISMET.",
-  "This is Adam. Cofounder of KISMET."
+    '"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors."',
+    "Meet Hugo, baker at KISMET.",
+    "This is Adam. Cofounder of KISMET.",
   ];
 
   let currentIndex = 0;
@@ -126,7 +130,7 @@ let currentIndex = 0;
     z-index: 5;
     transition: opacity 0.3s ease-in-out;
     background: rgba(255, 255, 255, 0.7);
-    padding: 0.50rem 0.25rem;
+    padding: 0.5rem 0.25rem;
     border-radius: 3px;
     opacity: 0;
     pointer-events: none;

@@ -73,26 +73,29 @@ import Footer from "../components/Footer.astro";
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url("/img/collab_background.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8; /* Adjust here */
+    background-image: url("/img/about-background.webp"); 
+    background-size: 400px 500px; 
+    background-position: top left;
+    background-repeat: repeat; 
+    opacity: 0.2; 
     z-index: -1;
+    pointer-events: none;
   }
+
   body.menu-page::before {
-    content: "";
+  content: "";
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url("/img/collab_background.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8; /* Adjust here */
+    background-image: url("/img/about-1.webp");
+    background-size: 400px 500px;
+    background-position: top left;
+    background-repeat: repeat; 
+    opacity: 0.2; 
     z-index: -1;
+    pointer-events: none;
   }
   body.collab-page::before {
     content: "";

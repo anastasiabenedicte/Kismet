@@ -3,6 +3,7 @@
 ---
 
 <footer>
+  <div class="footer-overlay"></div>
   <div class="footer-container">
     <section>
       <h2>Opening hours</h2>
@@ -17,17 +18,14 @@
       </div>
       <p>(BREAKFAST ALL DAY)</p>
     </section>
-   <section>
-  <h3>Information</h3>
-  <p><a href="/about">About</a></p>
-  <p><a href="#" class="no-link">Contact</a></p>
-</section>
+    <section>
+      <h3>Information</h3>
+      <p><a href="/about">About</a></p>
+      <p><a href="#" class="no-link">Contact</a></p>
+    </section>
     <section class="location">
       <h3>Location</h3>
-      <a
-        href="https://www.google.com/maps/dir/?api=1&destination=Adelgade+16%2C+1304+Copenhagen+Denmark"
-        target="_blank"
-      >
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Adelgade+16%2C+1304+Copenhagen+Denmark" target="_blank">
         Adelgade 16, 1304 KBH K
       </a>
     </section>
@@ -39,6 +37,17 @@
 </footer>
 
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  main {
+    margin: 0;
+    padding: 0;
+  }
+
   .hours {
     display: grid;
     grid-template-columns: auto auto;
@@ -49,26 +58,50 @@
     text-transform: uppercase;
     letter-spacing: 0.1rem;
   }
+
   .hours > div {
     text-align: left;
     min-width: 8rem;
   }
+
   .hours li {
     list-style: none;
     margin: 0.5rem 0;
     letter-spacing: 0.1rem;
   }
+
   footer {
-    background-image: url("/img/footer.webp");
-    background-size: cover;
-    background-position: center;
+    position: relative;
     font-family: monospace;
     display: flex;
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
     color: #3d4b19;
+    overflow: hidden;
+    background-color: #f9f6ef;
   }
+
+  .footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("/img/footer.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .footer-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 4rem 1rem;
+  }
+
   h2 {
     font-weight: 200;
     font-style: italic;
@@ -77,6 +110,7 @@
     padding-bottom: 2rem;
     letter-spacing: 0.2rem;
   }
+
   h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -85,25 +119,24 @@
     font-style: italic;
     letter-spacing: 0.2rem;
   }
-  section a {
-  text-decoration: none;
-  color: inherit;
-  font-family: inherit;
-}
 
-.no-link {
-  cursor: default; /* så det ikke viser hånd-ikon ved hover */
-  pointer-events: none; /* gør linket ikke klikbart */
-}
-  .socials {
-    padding-bottom: 10rem;
-  }
-  .socials a {
+  section a {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
   }
-  .location a {
+
+  .no-link {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .socials {
+    padding-bottom: 10rem;
+  }
+
+  .location a,
+  .socials a {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
@@ -112,17 +145,18 @@
   p {
     margin: 1rem;
   }
+
   @media screen and (min-width: 800px) {
     footer {
-      background-repeat: repeat-x;
-      background-size: auto 100%;
-      background-position: center bottom;
-      width: 100%;
       padding: 4rem 0;
     }
-     .socials {
-    padding-bottom: 6rem;
-  }
+
+    .socials {
+      padding-bottom: 6rem;
+    }
+
     h2 {
-    padding-top: 7rem}
+      padding-top: 7rem;
+    }
+  }
 </style>

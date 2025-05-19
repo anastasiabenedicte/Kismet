@@ -85,4 +85,26 @@ const images = [
   .slide-buttons button:hover {
     background-color: var(--dark-green);
   }
+
+  @media (min-width: 1024px) {
+    .slide-box {
+      width: 250px;
+      border-radius: 5px;
+      border: 13px solid var(--light-green);
+      box-shadow: 0 25px 50px var(--plum);
+      margin: 0px auto 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-right: 110px;
+    }
+    .slide-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      margin-right: 110px;
+    }
+  }
 </style>

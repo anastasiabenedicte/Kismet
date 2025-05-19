@@ -4,21 +4,46 @@ import CollabSlide from "./CollabSlide.astro";
 ---
 
 <section class="collabs-section">
-  <h1>COLLABS</h1>
+  <div class="collab-text-side">
+    <h1>COLLABS</h1>
+    <p>Interested in doing a collab with us?</p>
+  </div>
 
-  <p>Interested in doing a collab with us?</p>
+  <div class="collab-flexbox">
+    <!-- TEKST FØRST = VENSTRE på desktop -->
+    <div class="collab-wrapper">
+      <p class="collab-text">
+        Kismet is a café in the heart of Copenhagen, known for its unique vibe
+        and creative events. We love collaborating with exciting brands and
+        individuals who share our values. Feel free to reach out if you have an
+        idea for a collab - we only accept inquiries via email.
+      </p>
+    </div>
 
-  <CollabSlide />
+    <!-- SLIDER EFTER = HØJRE på desktop -->
+    <div class="collab-slide">
+      <CollabSlide />
+    </div>
+  </div>
 </section>
 
-<div class="collab-wrapper">
+<!-- <section class="collabs-section">
+  <div class="collab-text-side">
+    <h1>COLLABS</h1>
+
+    <p>Interested in doing a collab with us?</p>
+  </div>
+  <CollabSlide />
+</section> -->
+
+<!-- <div class="collab-wrapper">
   <p class="collab-text">
     Kismet is a café in the heart of Copenhagen, known for its unique vibe and
     creative events. We love collaborating with exciting brands and individuals
     who share our values. Feel free to reach out if you have an idea for a
     collab - we only accept inquiries via email.
   </p>
-</div>
+</div> -->
 
 <div class="contact-toggle">
   <input type="checkbox" id="contact-toggle" hidden />
@@ -37,13 +62,11 @@ import CollabSlide from "./CollabSlide.astro";
 <hr />
 
 <style>
-  .img-scroll {
-    width: 250px;
-    border-radius: 10px;
-    border: 8px solid var(--light-green);
-    box-shadow: 0 5px 15px var(--plum);
-    margin: 70px;
-    place-self: center;
+  .collab-flexbox {
+    display: flex;
+    flex-direction: column-reverse; /* MOBIL: slider først */
+    gap: 2rem;
+    padding: 2rem;
   }
 
   h1 {
@@ -55,7 +78,7 @@ import CollabSlide from "./CollabSlide.astro";
   }
 
   p {
-    color: var(--beige);
+    color: var(--plum);
   }
 
   .collab-text {
@@ -63,16 +86,19 @@ import CollabSlide from "./CollabSlide.astro";
     max-width: 700px;
     line-height: 1.8;
     margin-top: 60px;
-    color: var(--beige);
+    color: var(--dark-green);
   }
 
   .lookingforw {
-    color: var(--light-purple);
+    color: var(--plum);
   }
 
   .contact-toggle {
-    margin: 3rem;
-    place-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem auto;
   }
 
   .contact-box {
@@ -89,7 +115,24 @@ import CollabSlide from "./CollabSlide.astro";
     transition: all 0.8s ease;
   }
 
+  .contact-box p {
+    color: var(--beige);
+  }
   #contact-toggle:checked ~ .contact-box {
     display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .collab-flexbox {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .collab-wrapper {
+      max-width: 480px; /* eller prøv fx 420px hvis du vil ha det endnu smallere */
+    }
   }
 </style>

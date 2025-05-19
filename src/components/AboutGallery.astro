@@ -18,7 +18,6 @@ const images = Array.from({ length: 9 }, (_, i) => ({
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     display: block;
     transition: transform 0.3s ease;
   }
@@ -35,19 +34,48 @@ const images = Array.from({ length: 9 }, (_, i) => ({
     }
 
     img {
-      height: auto;
+      height: 20rem;
     }
   }
 </style>
 
-<main>
+<main id="gallery">
   {images.map((image) => (
     <img
       src={image.src}
       alt={image.alt}
       loading="lazy"
       decoding="async"
+      key={image.src}
     />
   ))}
 </main>
 
+<script is:inline>
+  const gallery = document.getElementById("gallery");
+  let mobileImageAdded = false;
+
+  function updateGallery() {
+    if (window.innerWidth <= 800) {
+      if (!mobileImageAdded) {
+        const templateImg = gallery.querySelector("img");
+        const img = templateImg.cloneNode();
+        img.src = "/img/staff-10.webp";
+        img.alt = "Galleri billede 10";
+        gallery.appendChild(img);
+        mobileImageAdded = true;
+      }
+    } else {
+      if (mobileImageAdded) {
+        const imgs = gallery.querySelectorAll("img");
+        if (imgs.length > 9) {
+          gallery.removeChild(imgs[imgs.length - 1]);
+        }
+        mobileImageAdded = false;
+      }
+    }
+  }
+
+  updateGallery();
+  window.addEventListener("resize", updateGallery);
+</script>

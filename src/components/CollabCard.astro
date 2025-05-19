@@ -1,0 +1,62 @@
+---
+const { title, description, imgSrc, flip } = Astro.props;
+---
+
+<div class={`collab-card ${flip ? "flip" : ""}`}>
+  <h3>{title}</h3>
+
+  <div class="collab-image">
+    <img src={imgSrc} alt={title} />
+  </div>
+
+  <div class="collab-text">
+    <p>{description}</p>
+  </div>
+</div>
+
+<style>
+  .collab-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    padding: 1rem;
+  }
+
+  .collab-text {
+    background: white;
+    padding: 1.5rem;
+    font-family: "Fragment Mono", monospace;
+    color: var(--plum);
+  }
+
+  .collab-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h3 {
+    font-family: "Fragment Mono", monospace;
+    color: var(--dark-green);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @media (min-width: 768px) {
+    .collab-card {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .collab-card.flip {
+      flex-direction: row-reverse;
+    }
+
+    .collab-text,
+    .collab-image {
+      flex: 1;
+    }
+  }
+</style>

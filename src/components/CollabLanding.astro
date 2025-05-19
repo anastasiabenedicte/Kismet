@@ -69,15 +69,6 @@ import CollabSlide from "./CollabSlide.astro";
     padding: 2rem;
   }
 
-  .img-scroll {
-    width: 250px;
-    border-radius: 10px;
-    border: 8px solid var(--light-green);
-    box-shadow: 0 5px 15px var(--plum);
-    margin: 70px;
-    place-self: center;
-  }
-
   h1 {
     color: var(--light-purple);
   }
@@ -138,17 +129,10 @@ import CollabSlide from "./CollabSlide.astro";
       align-items: center;
       max-width: 1120px;
       margin: 0 auto;
-      padding-inline: 2rem;
-    }
-
-    .collab-wrapper {
-      flex: 1;
       padding: 0;
     }
-
-    .collab-slide {
-      max-width: 400px;
-      flex-shrink: 0;
+    .collab-wrapper {
+      max-width: 480px; /* eller prøv fx 420px hvis du vil ha det endnu smallere */
     }
   }
 </style>

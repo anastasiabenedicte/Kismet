@@ -1,48 +1,111 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+const images = ["img/about-3.webp", "img/about-1.webp", "img/about-2.webp"];
+const captions = [
+    "\"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors.\"",
+  "Meet Hugo, baker at KISMET.",
+  "This is Adam. Cofounder of KISMET."
+];
 
-const images = ["img/about-1.webp", "/img/about-2.webp", "/img/about-3.webp"];
+let currentIndex = 0;
 ---
 
 <div class="slide-box">
+  <button id="prev-btn" class="slide-btn prev-btn" aria-label="Previous image">
+    <span class="arrow">←</span>
+  </button>
+
   <div class="slide">
-    <div class="img-wrap">
+    <div class="img-wrap" id="img-wrap">
       <img id="slide-img" src={images[0]} alt="about slide" />
+      <div class="caption-wrapper" id="caption-wrapper">
+        <p id="caption" class="caption">{captions[0]}</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="slide-buttons">
-  <button id="prev-btn">
-    <span class="arrow">←</span>
-    <span class="label">BACK</span>
-  </button>
-  <button id="next-btn">
+
+  <button id="next-btn" class="slide-btn next-btn" aria-label="Next image">
     <span class="arrow">→</span>
-    <span class="label">NEXT</span>
   </button>
 </div>
 
-<script src="/scripts/aboutslide.js" type="module"></script>
+<script type="module" is:inline>
+  const images = ["img/about-3.webp", "img/about-1.webp", "img/about-2.webp"];
+  const captions = [
+    "\"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors.\"",
+  "Meet Hugo, baker at KISMET.",
+  "This is Adam. Cofounder of KISMET."
+  ];
+
+  let currentIndex = 0;
+
+  const imgElement = document.getElementById("slide-img");
+  const captionElement = document.getElementById("caption");
+  const captionWrapper = document.getElementById("caption-wrapper");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const imgWrap = document.getElementById("img-wrap");
+
+  function updateImage() {
+    imgElement.style.opacity = 0;
+    captionElement.style.opacity = 0;
+
+    setTimeout(() => {
+      imgElement.src = images[currentIndex];
+      captionElement.textContent = captions[currentIndex];
+      imgElement.style.opacity = 1;
+      captionElement.style.opacity = 1;
+
+      if (window.innerWidth <= 768) {
+        captionWrapper.classList.remove("show-caption");
+      }
+    }, 300);
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  });
+
+  imgWrap.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      captionWrapper.classList.toggle("show-caption");
+    }
+  });
+</script>
 
 <style>
   .slide-box {
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 460px;
     border-radius: 5px;
-    margin: 20px auto 20px auto;
+    margin: 20px auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
+  }
+
+  .slide {
+    position: relative;
+    width: 100%;
   }
 
   .img-wrap {
-    width: 600;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
+    position: relative;
   }
 
   .img-wrap img {
@@ -53,29 +116,99 @@ const images = ["img/about-1.webp", "/img/about-2.webp", "/img/about-3.webp"];
     border-radius: 4px;
   }
 
-  .slide-buttons {
+  .caption-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    justify-content: center;
-    gap: 13rem;
-    margin-bottom: 2rem;
+    align-items: center;
+    z-index: 5;
+    transition: opacity 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.50rem 0.25rem;
+    border-radius: 3px;
+    opacity: 0;
+    pointer-events: none;
   }
 
-  .slide-buttons button {
-    padding: 0.25rem 2rem;
-    font-size: 0.8rem;
+  .caption {
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--plum);
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  @media (min-width: 801px) {
+    .img-wrap:hover .caption-wrapper {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: whitesmoke;
     border: 1px solid var(--plum);
     color: var(--plum);
-    border-radius: 8px;
+    border-radius: 50%;
     cursor: pointer;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.2s ease;
+    user-select: none;
+    z-index: 10;
   }
 
-  .slide-buttons button:hover {
+  .slide-btn:hover {
     background-color: var(--dark-green);
     color: var(--beige);
   }
-  .slide-buttons button .arrow {
-    margin-right: 0.4em;
+
+  .prev-btn {
+    left: 5px;
+  }
+
+  .next-btn {
+    right: 5px;
+  }
+
+  @media (max-width: 800px) {
+    .slide-box {
+      width: 100%;
+      height: auto;
+    }
+
+    .img-wrap {
+      width: 100%;
+      height: auto;
+    }
+
+    .img-wrap img {
+      width: 100%;
+      height: auto;
+    }
+
+    .caption-wrapper {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .caption-wrapper.show-caption {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .caption {
+      font-size: 1.1rem;
+    }
   }
 </style>

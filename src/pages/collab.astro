@@ -8,19 +8,8 @@ import ButtonSquare from "../components/ButtonSquare.astro";
 const title = "collaboration";
 ---
 
-<MainLayout {title}>
+<MainLayout {title} backgroundClass="collab-page">
   <section class="collab-page">
     <CollabLanding />
   </section>
-
-  <style>
-    .collab-page {
-      min-height: 100vh;
-      background-image: url("/public/img/collab_background.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-  </style>
 </MainLayout>

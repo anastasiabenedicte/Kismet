@@ -69,9 +69,9 @@ import CollabSlide from "./CollabSlide.astro";
     padding: 2rem;
   }
 
-  hr{
+  hr {
     margin: 60px;
-    width: 1200px;
+
     height: 5px;
     border: none;
     place-self: center;
@@ -132,6 +132,9 @@ import CollabSlide from "./CollabSlide.astro";
   }
 
   @media (min-width: 1024px) {
+    .hr {
+      width: 1200px;
+    }
     .collab-flexbox {
       flex-direction: row;
       justify-content: space-between;
@@ -148,12 +151,11 @@ import CollabSlide from "./CollabSlide.astro";
       margin-left: 60px;
     }
     .lookingforw {
-    place-self: center;
+      place-self: center;
       margin-top: 2rem;
     }
-    .collab-slide{
+    .collab-slide {
       margin-top: -50px;
     }
-  }
   }
 </style>

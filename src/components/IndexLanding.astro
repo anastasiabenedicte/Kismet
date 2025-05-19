@@ -1,0 +1,95 @@
+---
+
+---
+
+<section class="Index-section">
+  <div class="index-text-side">
+    <h1>KISMET</h1>
+  </div>
+
+  <div class="index-flexbox">
+    <div class="index-wrapper">
+      <p class="index-text">
+        Welcome to kismet! something something text about the place, grab some
+        luch, coffee, beer whatever u like - atmosphere, bakery lalala
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap-img-h3">
+    <div class="index-img">
+      <img src="/img/index-landing-img.webp" alt="Kismet" />
+    </div>
+
+    <h3 class="no-res">No reservations:)</h3>
+  </div>
+</section>
+
+<hr />
+
+<style>
+  h1 {
+    color: var(--dark-green);
+  }
+
+  .index-img {
+    width: 400px;
+    margin-left: 40px;
+  }
+
+  p {
+    color: var(--black);
+    width: 420px;
+    line-height: 30px;
+  }
+
+  .no-res {
+    font-family: "Gloria Hallelujah", cursive;
+    color: var(--dark-purple);
+    font-size: 30px;
+  }
+
+  hr {
+    width: 25rem;
+    height: 3px;
+    background-color: var(--beige);
+    border: none;
+    margin: 2rem auto;
+  }
+  .wrap-img-h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      width: 450px;
+    }
+    hr {
+      width: 70rem;
+    }
+
+    .index-img {
+      width: 500px;
+      margin: 0;
+      order: 2;
+      margin-top: -250px;
+      margin-left: 200px;
+    }
+    .wrap-img-h3 {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    .no-res {
+      font-size: 30px;
+      margin-top: 5rem; /* justér så den flugter med toppen af billedet */
+      order: 1;
+    }
+  }
+</style>

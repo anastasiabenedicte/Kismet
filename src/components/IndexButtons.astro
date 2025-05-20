@@ -1,0 +1,106 @@
+---
+
+---
+
+<section class="index-buttons">
+  <div class="button-card purple">
+    <img class="doodle" src="/img/index_doodle_1_3.webp" alt="doodle" />
+    <img class="main-img" src="/img/index_button_img1.webp" alt="Events" />
+    <a class="text" href="/events">EVENTS</a>
+  </div>
+
+  <div class="button-card green">
+    <img class="doodle" src="/img/index_doodle_2.webp" alt="doodle" />
+    <img class="main-img" src="/img/index_button_img2.webp" alt="Collab" />
+    <a class="text" href="/collab">COLLAB</a>
+  </div>
+
+  <div class="button-card plum">
+    <img class="doodle" src="/img/index_doodle_2.webp" alt="doodle" />
+    <img class="main-img" src="/img/index_button_img3.webp" alt="About" />
+    <a class="text" href="/about">ABOUT</a>
+  </div>
+</section>
+
+<style>
+  .index-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .button-card {
+    position: relative;
+    display: inline-block;
+    width: 55%;
+    max-width: 320px;
+    border-radius: 10px;
+    margin: 25px;
+  }
+
+  .main-img {
+    width: 100%;
+    display: block;
+    border: 8px solid var(--plum);
+    border-radius: 5px;
+  }
+
+  .doodle {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 200px;
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .text {
+    position: absolute;
+    bottom: 15px;
+    left: 47px;
+    font-family: "Gloria Hallelujah", cursive;
+    font-size: 2.4rem;
+    color: white;
+    z-index: 6;
+    text-decoration: none;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+    text-shadow:
+      -1px -1px 0 var(--dark-green),
+      1px -1px 0 var(--plum),
+      -1px 1px 0 var(--dark-green),
+      1px 1px 0 var(--plum);
+  }
+
+  .text:hover {
+    transform: scale(1.08);
+    color: var(--beige);
+  }
+  .button-card.green .main-img {
+    border-color: var(--light-green);
+  }
+  .button-card.purple .main-img {
+    border-color: var(--light-purple);
+  }
+  .button-card.plum .main-img {
+    border-color: var(--plum);
+  }
+  .button-card.plum {
+    margin-bottom: 100px;
+  }
+
+  @media (min-width: 768px) {
+    .index-buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+    .button-card.button-card.purple {
+      margin-bottom: 80px;
+    }
+  }
+</style>

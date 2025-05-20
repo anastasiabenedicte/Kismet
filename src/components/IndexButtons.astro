@@ -1,0 +1,157 @@
+---
+
+---
+
+<section class="index-buttons">
+  <div class="button-card purple">
+    <img
+      class="doodle doodle-event"
+      src="/img/index_doodle_1_3.webp"
+      alt="doodle"
+    />
+    <img class="main-img" src="/img/index_button_img1.webp" alt="Events" />
+    <a class="text" href="/events">EVENTS</a>
+  </div>
+
+  <div class="button-card green">
+    <img
+      class="doodle doodle-collab"
+      src="/img/index_doodle_2.webp"
+      alt="doodle"
+    />
+    <img class="main-img" src="/img/index_button_img2.webp" alt="Collab" />
+    <a class="text" href="/collab">COLLAB</a>
+  </div>
+
+  <div class="button-card plum">
+    <img
+      class="doodle doodle-about"
+      src="/img/index_doodle_2.webp"
+      alt="doodle"
+    />
+    <img class="main-img" src="/img/index_button_img3.webp" alt="About" />
+    <a class="text" href="/about">ABOUT</a>
+  </div>
+</section>
+
+<style>
+  .index-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .button-card {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    max-width: 320px;
+    border-radius: 10px;
+    margin: 25px;
+  }
+
+  .main-img {
+    width: 100%;
+    display: block;
+    /* border: 8px solid var(--plum); */
+    border-radius: 5px;
+  }
+
+  .doodle {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+    animation: doodleFloat 3.5s ease-in-out infinite;
+  }
+
+  .doodle-event {
+    top: -30px;
+    left: -60px;
+    width: 200px;
+    transform: rotate(20deg);
+  }
+  .doodle-collab {
+    bottom: -100px;
+    right: -110px;
+    width: 270px;
+    transform: rotate(-10deg);
+  }
+  .doodle-about {
+    top: -50px;
+    left: -100px;
+    width: 280px;
+    transform: rotate(-20deg);
+  }
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Gloria Hallelujah", cursive;
+    font-size: 2.3rem;
+    color: white;
+    z-index: 6;
+    text-decoration: none;
+    pointer-events: auto;
+    text-align: center;
+
+    text-shadow:
+      -1px -1px 0 var(--dark-green),
+      1px -1px 0 var(--plum),
+      -1px 1px 0 var(--dark-green),
+      1px 1px 0 var(--plum);
+
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .text:hover {
+    transform: translate(-50%, -50%) scale(1.08); /* 👈 her er den magiske kombi */
+    color: var(--beige);
+  }
+  .button-card.green .main-img {
+    border-color: var(--light-green);
+    border: 12px solid var(--light-green);
+    border-bottom: none;
+    border-left: none;
+  }
+  .button-card.purple .main-img {
+    border-color: var(--light-purple);
+    border: 15px solid var(--light-purple);
+    border-bottom: none;
+    border-right: none;
+  }
+  .button-card.plum .main-img {
+    border-color: var(--plum);
+    border: 15px solid var(--plum);
+    border-top: none;
+    border-left: none;
+  }
+  .button-card.plum {
+    margin-bottom: 100px;
+  }
+
+  @keyframes doodleFloat {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--rotate, 0deg));
+    }
+    50% {
+      transform: translateY(-6px) rotate(var(--rotate, 0deg));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .index-buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+    .button-card.button-card.purple {
+      margin-bottom: 80px;
+    }
+  }
+</style>

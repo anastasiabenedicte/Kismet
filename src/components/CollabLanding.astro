@@ -114,19 +114,18 @@ import CollabSlide from "./CollabSlide.astro";
   .contact-box {
     margin-top: 1rem;
     padding: 2rem;
-    background-color: var(--light-green);
-    border: 4px solid var(--beige);
+    background-color: var(--beige);
+    /* border: 4px solid var(--beige); */
+    box-shadow: 10px 10px var(--plum);
 
     color: var(--beige);
-
-    border-radius: 10px;
 
     display: none;
     transition: all 0.8s ease;
   }
 
   .contact-box p {
-    color: var(--beige);
+    color: var(--plum);
   }
   #contact-toggle:checked ~ .contact-box {
     display: block;

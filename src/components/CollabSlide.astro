@@ -39,26 +39,15 @@ const images = [
 
 <style>
   .slide-box {
-    width: 242px;
-    border-radius: 5px;
-    border: 10px solid var(--light-green);
-    box-shadow: 0 10px 30px var(--plum);
+    width: 232px;
+    box-shadow: 10px 10px var(--light-green);
+    /* box-shadow: 0 10px 30px var(--plum); */
     margin: 70px auto 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
-  }
-
-  @keyframes doodleFloat {
-    0%,
-    100% {
-      transform: rotate(-8deg) translateY(0px);
-    }
-    50% {
-      transform: rotate(-8deg) translateY(-6px);
-    }
   }
 
   .img-wrap {
@@ -131,15 +120,17 @@ const images = [
 
   @media (min-width: 1024px) {
     .slide-box {
-      width: 250px;
-      border-radius: 5px;
-      border: 13px solid var(--light-green);
-      box-shadow: 0 25px 50px var(--plum);
+      width: 230px;
+
+      /* border: 13px solid var(--light-green); */
+      box-shadow: 10px 10px var(--plum);
+      /* box-shadow: 0 25px 50px var(--plum); */
       margin: 0px auto 20px auto;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      margin-top: 30px;
       margin-right: 110px;
     }
     .slide-buttons {

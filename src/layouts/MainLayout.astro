@@ -52,20 +52,6 @@ import Footer from "../components/Footer.astro";
     z-index: -1;
     pointer-events: none;
   }
-  body.collab-page::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("/img/collab_background.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8; /* Adjust here */
-    z-index: -1;
-  }
   body.about-page::before {
     content: "";
     position: fixed;
@@ -73,17 +59,17 @@ import Footer from "../components/Footer.astro";
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url("/img/about-background.webp"); 
-    background-size: 400px 500px; 
+    background-image: url("/img/about-background.webp");
+    background-size: 400px 500px;
     background-position: top left;
-    background-repeat: repeat; 
-    opacity: 0.2; 
+    background-repeat: repeat;
+    opacity: 0.2;
     z-index: -1;
     pointer-events: none;
   }
 
   body.menu-page::before {
-  content: "";
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
@@ -92,8 +78,8 @@ import Footer from "../components/Footer.astro";
     background-image: url("/img/about-1.webp");
     background-size: 400px 500px;
     background-position: top left;
-    background-repeat: repeat; 
-    opacity: 0.2; 
+    background-repeat: repeat;
+    opacity: 0.1;
     z-index: -1;
     pointer-events: none;
   }
@@ -104,25 +90,42 @@ import Footer from "../components/Footer.astro";
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url("/img/collab_background.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8; /* Adjust here */
+    background-image: url("/img/collab.4.webp");
+    background-size: 400px 500px;
+    background-position: top left;
+    background-repeat: repeat;
+    opacity: 0.1;
     z-index: -1;
+    pointer-events: none;
   }
   body.index-page::before {
-    content: "";
+     content: "";
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url("/img/index_background_img.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8; /* Adjust here */
+    background-image: url("/img/index-3.webp");
+    background-size: 400px 500px;
+    background-position: top left;
+    background-repeat: repeat;
+    opacity: 0.3;
     z-index: -1;
+    pointer-events: none;
+  }
+  body.events-page::before {
+       content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("/img/collab-4.webp");
+  background-size: 400px 500px;
+  background-position: top left;
+  background-repeat: repeat;
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
   }
 </style>

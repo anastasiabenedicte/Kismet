@@ -1,10 +1,23 @@
 ---
 const { variant, text, size } = Astro.props;
+
+const filters = ["all", "run-club", "dj", "dinner", "workshop"];
+console.log(filters);
 ---
 
-<button class={`${variant} ${size}`}>
+<button class={`filter-btn ${variant} ${size}`} data-event="">
   {text}
 </button>
+
+{
+  /* <div style="outline: 2px solid red;">
+  {
+    filters.map((filter) => {
+      ;
+    })
+  }
+</div>*/
+}
 
 <style>
   button {
@@ -32,3 +45,9 @@ const { variant, text, size } = Astro.props;
     color: var(--dark-green);
   }
 </style>
+<script>
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  filterButtons.forEach((filterButton) => {
+    console.log(filterButton);
+  });
+</script>

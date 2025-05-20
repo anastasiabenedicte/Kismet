@@ -55,8 +55,8 @@
   .main-img {
     width: 100%;
     display: block;
+    transition: transform 0.3s ease;
     /* border: 8px solid var(--plum); */
-    border-radius: 5px;
   }
 
   .doodle {
@@ -115,25 +115,33 @@
   }
   .button-card.green .main-img {
     border-color: var(--light-green);
-    border: 12px solid var(--light-green);
+    /* border: 12px solid var(--light-green); */
     border-bottom: none;
     border-left: none;
+    box-shadow: 10px 10px var(--light-green);
   }
   .button-card.purple .main-img {
     border-color: var(--light-purple);
-    border: 15px solid var(--light-purple);
+    /* border: 15px solid var(--light-purple); */
     border-bottom: none;
     border-right: none;
+    box-shadow: 10px 10px var(--light-purple);
   }
   .button-card.plum .main-img {
     border-color: var(--plum);
-    border: 15px solid var(--plum);
+    /* border: 15px solid var(--plum); */
     border-top: none;
     border-left: none;
+    box-shadow: 10px 10px var(--plum);
   }
-  .button-card.plum {
+
+  .button-card:hover .main-img {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+  /* .button-card.plum {
     margin-bottom: 100px;
-  }
+  } */
 
   @keyframes doodleFloat {
     0%,
@@ -149,9 +157,6 @@
     .index-buttons {
       flex-direction: row;
       justify-content: center;
-    }
-    .button-card.button-card.purple {
-      margin-bottom: 80px;
     }
   }
 </style>

@@ -14,5 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuIcon.classList.toggle("active");
     menuLinks.classList.toggle("active");
     wrapper.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
   });
 });

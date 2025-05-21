@@ -47,7 +47,7 @@
     position: relative;
     display: inline-block;
     width: 50%;
-    max-width: 270px;
+    max-width: 230px;
     border-radius: 10px;
     margin: 40px;
   }
@@ -70,20 +70,20 @@
   .doodle-event {
     top: -30px;
     left: -60px;
-    width: 200px;
+    width: 170px;
     transform: rotate(20deg);
   }
   .doodle-collab {
     bottom: -100px;
     right: -110px;
-    width: 270px;
+    width: 250px;
     transform: rotate(-10deg);
   }
   .doodle-about {
     top: -50px;
-    left: -100px;
-    width: 280px;
-    transform: rotate(-20deg);
+    left: -70px;
+    width: 200px;
+    --rotate: -30deg;
   }
   .text {
     position: absolute;
@@ -100,9 +100,9 @@
 
     text-shadow:
       -1px -1px 0 var(--dark-green),
-      1px -1px 0 var(--plum),
+      1px -1px 0 var(--dark-purple),
       -1px 1px 0 var(--dark-green),
-      1px 1px 0 var(--plum);
+      1px 1px 0 var(--dark-purple);
 
     transition:
       transform 0.3s ease,
@@ -128,11 +128,11 @@
     box-shadow: 10px 10px var(--light-purple);
   }
   .button-card.plum .main-img {
-    border-color: var(--plum);
+    border-color: var(--dark-purple);
     /* border: 15px solid var(--plum); */
     border-top: none;
     border-left: none;
-    box-shadow: 10px 10px var(--plum);
+    box-shadow: 10px 10px var(--dark-green);
   }
 
   .button-card:hover .main-img {

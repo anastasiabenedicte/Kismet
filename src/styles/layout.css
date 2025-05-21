@@ -1,16 +1,19 @@
-body{
-    min-height: 100svh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    /* font-family */
+body {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* font-family */
 }
 
-main, header >nav, footer> * {
-    width: 100%;
-    max-width: 1120px;
-    margin-inline: auto;
+main,
+header > nav,
+footer > * {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  margin-top: 20vh;
 }
 
-main{
-    padding-inline: 2rem;
+main {
+  padding-inline: 2rem;
 }

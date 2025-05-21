@@ -27,7 +27,17 @@ const images = [
       </div>
     </div>
   </div>
-  <img class="doodle-overlay" src="/img/collab_doodle_3.webp" alt="doodle" />
+  <img class="doodle-overlay" src="/img/collab_doodle_4.webp" alt="doodle" />
+  <img
+    class="doodle-overlay2"
+    src="/img/collab_doodle_prik.webp"
+    alt="doodle"
+  />
+  <img
+    class="doodle-overlay3"
+    src="/img/collab_doodle_prik.webp"
+    alt="doodle"
+  />
 </div>
 <div class="slide-buttons">
   <button id="prev-btn">←</button>
@@ -84,6 +94,18 @@ const images = [
     pointer-events: none;
     transform: rotate(-8deg);
     animation: doodleFloat 4s ease-in-out infinite;
+  }
+  .doodle-overlay2 {
+    position: absolute;
+    top: 275px;
+    left: -5px;
+    width: 250px;
+  }
+  .doodle-overlay3 {
+    position: absolute;
+    top: 290px;
+
+    width: 240px;
   }
 
   @keyframes doodleFloat {

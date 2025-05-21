@@ -13,14 +13,36 @@ const data = await fetch(url, options).then((res) => res.json());
 <nav>
   <p>Categories</p>
   <div>
-    <ButtonRound text="all" variant="variant_2" data-filter="all" />
-    <ButtonRound text="dj" variant="variant_1" data-filter="dj" />
-    <ButtonRound text="Run-Club" variant="variant_1" data-filter="run-club" />
-    <ButtonRound text="Workshops" variant="variant_1" data-filter="workshop" />
-    <ButtonRound text="Dinner" variant="variant_1" data-filter="dinner" />
+    <ButtonRound
+      text="all"
+      variant="variant_2"
+      data="all"
+      filter="filter-btn"
+    />
+    <ButtonRound text="dj" variant="variant_1" data="dj" filter="filter-btn" />
+    <ButtonRound
+      text="Run-Club"
+      variant="variant_1"
+      data="run-club"
+      filter="filter-btn"
+    />
+    <ButtonRound
+      text="Workshops"
+      variant="variant_1"
+      data="workshop"
+      filter="filter-btn"
+    />
+    <ButtonRound
+      text="Dinner"
+      variant="variant_1"
+      data="dinner"
+      filter="filter-btn"
+    />
   </div>
 </nav>
-<ul>{data.map((product) => <EventCard {product} />)}</ul>
+<ul class="event_container">
+  {data.map((product) => <EventCard {product} />)}
+</ul>
 <style>
   ul {
     padding: 2vh 0 0 0;
@@ -39,4 +61,43 @@ const data = await fetch(url, options).then((res) => res.json());
     color: var(--dark-purple);
     text-transform: uppercase;
   }
+
+  .hidden {
+    display: none;
+  }
 </style>
+
+<script>
+  const buttons = document.querySelectorAll("#filter-btn");
+
+  const cards = document.querySelectorAll(".event_container a");
+
+  console.log(buttons);
+  console.log(cards);
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((button) => {
+        button.classList.remove("variant_2");
+        button.classList.add("variant_1");
+      });
+
+      button.classList.add("variant_2");
+
+      const filteractive = button.getAttribute("data-filter");
+
+      console.log(filteractive);
+
+      cards.forEach((card) => {
+        if (
+          filteractive === "all" ||
+          card.getAttribute("data-filter")?.toLowerCase() == filteractive
+        ) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>

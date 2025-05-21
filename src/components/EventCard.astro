@@ -37,7 +37,10 @@ console.log(data);
 */
 ---
 
-<a href={`/products/${product.event_slug}`}>
+<a
+  href={`/products/${product.event_slug}`}
+  data-filter={`${product.event_type}`}
+>
   <article>
     <div class="flex_box">
       <p>{product.event_date}</p>
@@ -76,5 +79,8 @@ console.log(data);
 
   a {
     color: var(--dark-purple);
+  }
+  .hidden {
+    display: none;
   }
 </style>

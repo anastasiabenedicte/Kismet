@@ -4,22 +4,23 @@
 
 <nav id="navbar" class="navbar">
   <div class="mobile">
-    <a href="/index.html" class="logo"
-      ><img src="/img/logo.webp" alt="logo" /></a
-    >
+    <a href="/index.html" class="logo">
+      <img src="/img/logo.webp" alt="logo" />
+    </a>
     <div class="menu_icon">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
     </div>
   </div>
+
   <div class="menu_list">
     <ul>
       <li><a href="../about">About Kismet</a></li>
       <li><a href="../menu">Menu</a></li>
-      <a href="/index.html" class="logo"
-        ><img src="/img/logo.webp" alt="logo" /></a
-      >
+      <a href="/index.html" class="logo">
+        <img src="/img/logo.webp" alt="logo" />
+      </a>
       <li><a href="../events">Events</a></li>
       <li><a href="../collab">Collab</a></li>
     </ul>
@@ -40,41 +41,62 @@
     height: auto;
     width: 25vh;
   }
+
   .logo:hover {
     opacity: 50%;
   }
+
   img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     align-self: stretch;
   }
+
   .mobile {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 5vh 0 5vh;
   }
+
   .navbar {
-    position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: white;
+    background-color: transparent;
+    transition: background-color 0.1s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
   }
+
+  .navbar.scrolled {
+    background-color: var(--beige);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+
   span {
     font-family: "Fragment Mono", monospace;
     margin: 2vh;
     font-size: 1rem;
   }
+
   a {
     color: var(--dark-green);
   }
+
   a:hover {
     color: var(--light-green);
   }
+
   .menu_wrapper {
     position: fixed;
     top: 0;
     left: 0;
-    width: 40vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -88,10 +110,11 @@
   }
 
   .menu_wrapper.active {
-      transform: translateX(0);
+    transform: translateX(0);
     min-height: 100vh;
-    padding: 20vh 0 0 0; /* tilpass dette */
+    padding: 20vh 0 0 0;
   }
+
   .menu_links a {
     color: var(--light-purple);
     font-family: "Gloria Hallelujah", cursive;
@@ -99,16 +122,19 @@
     text-align: center;
     text-transform: uppercase;
   }
+
   .menu_links a:hover {
     color: var(--light-green);
   }
+
   .menu_links li {
     list-style: none;
   }
+
   .menu_links {
-     display: flex;
-  flex-direction: column;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .menu_icon {
@@ -140,24 +166,41 @@
     margin: 5px 0;
     transition: all 0.3s ease;
   }
+
   .menu_list {
     display: none;
   }
+
   @media screen and (min-width: 800px) {
     .menu_list ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
       list-style: none;
+      margin: 0 25vh 0 25vh;
     }
+
     .menu_list {
       display: block;
     }
+
     .menu_icon {
       display: none;
     }
+
     .mobile {
       display: none;
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 10);
+    });
+  });
+</script>

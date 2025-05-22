@@ -17,6 +17,12 @@
     </div>
   </div>
 
+  <img
+    class="doodle_bottle"
+    src="/img/index_wine_bottle.webp"
+    alt="doodle_bottle"
+  />
+
   <div class="wrap-img-h3">
     <div class="index-img">
       <img src="/img/index_landing.webp" alt="Kismet" />
@@ -41,7 +47,7 @@
   }
 
   .index-img {
-    width: 400px;
+    width: 320px;
     margin-left: 40px;
   }
 
@@ -52,12 +58,16 @@
     box-shadow: 10px 10px var(--dark-green);
     line-height: 30px;
     padding: 15px;
+    font-size: 14px;
+    margin: 20px auto;
+    margin-bottom: 70px;
   }
 
   .no-res {
     font-family: "Gloria Hallelujah", cursive;
     color: var(--dark-green);
-    font-size: 30px;
+    font-size: 15px;
+    margin-top: 30px;
   }
 
   hr {
@@ -75,6 +85,28 @@
     margin-top: 2rem;
   }
 
+  .doodle_bottle {
+    width: 120px;
+    position: absolute;
+    top: 415px;
+    left: 133px;
+    animation: bottleFloat 3.5s ease-in-out infinite;
+    transform-origin: bottom center; /* så den vipper realistisk */
+    display: inline-block; /* vigtigt for transform */
+  }
+
+  @keyframes bottleFloat {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+
   @media (min-width: 1024px) {
     p {
       width: 450px;
@@ -84,11 +116,11 @@
     }
 
     .index-img {
-      width: 520px;
-      margin: 0;
+      width: 400px;
+
       order: 2;
       margin-top: -280px;
-      margin-left: 100px;
+      margin-left: 10px;
     }
     .wrap-img-h3 {
       flex-direction: row;
@@ -99,18 +131,26 @@
 
     .index-text {
       padding-left: 25px;
-      margin-left: 22px;
+      margin-left: 20px;
     }
 
     .Index-section {
-      margin-top: 120px;
+      margin-top: 80px;
     }
 
     .no-res {
       font-size: 20px;
       margin-top: 7rem; /* justér så den flugter med toppen af billedet */
       order: 1;
-      padding-left: 35px;
+    }
+    .doodle_bottle {
+      width: 140px;
+      position: absolute;
+      top: 200px;
+      left: 765px;
+      animation: bottleFloat 3.5s ease-in-out infinite;
+      transform-origin: bottom center; /* så den vipper realistisk */
+      display: inline-block; /* vigtigt for transform */
     }
   }
 </style>

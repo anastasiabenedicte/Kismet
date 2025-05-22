@@ -77,7 +77,12 @@
     left: 0;
     width: 100vw;
   }
-
+  #navbar.active {
+    background-color: var(--dark-green);
+  }
+  #navbar.active .logo {
+    opacity: 0;
+  }
   span {
     font-family: "Fragment Mono", monospace;
     margin: 2vh;
@@ -112,13 +117,13 @@
   .menu_wrapper.active {
     transform: translateX(0);
     min-height: 100vh;
-    padding: 20vh 0 0 0;
+    padding: 5vh 8vh 0 8vh;
   }
 
   .menu_links a {
     color: var(--light-purple);
     font-family: "Gloria Hallelujah", cursive;
-    font-size: 3rem;
+    font-size: 1.3rem;
     text-align: center;
     text-transform: uppercase;
   }
@@ -145,7 +150,9 @@
     align-items: flex-end;
     cursor: pointer;
   }
-
+  .navbar.active {
+    background-color: var(--dark-green);
+  }
   .menu_icon.active .line:nth-child(2) {
     opacity: 0;
   }
@@ -197,10 +204,17 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbar");
-    if (!navbar) return;
+    const menuIcon = document.querySelector(".menu_icon");
+
+    if (!navbar || !menuIcon) return;
 
     window.addEventListener("scroll", () => {
-      navbar.classList.toggle("scrolled", window.scrollY > 10);
+      // Don't apply 'scrolled' if the burger menu is active
+      if (window.scrollY > 10 && !menuIcon.classList.contains("active")) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
     });
   });
 </script>

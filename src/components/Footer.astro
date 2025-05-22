@@ -129,8 +129,13 @@ import Button from './ButtonRound.astro';
   }
 
   .no-link {
-    cursor: default;
-    pointer-events: none;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .no-link:hover {
+    opacity: 0.5;
+    color: var(--light-green);
   }
 
   p {

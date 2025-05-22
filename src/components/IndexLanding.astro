@@ -17,15 +17,14 @@
     </div>
   </div>
 
-  <img
-    class="doodle_bottle"
-    src="/img/index_wine_bottle.webp"
-    alt="doodle_bottle"
-  />
-
   <div class="wrap-img-h3">
     <div class="index-img">
       <img src="/img/index_landing.webp" alt="Kismet" />
+      <img
+        class="doodle_bottle"
+        src="/img/index_wine_bottle.webp"
+        alt="doodle_bottle"
+      />
     </div>
 
     <h3 class="no-res">
@@ -49,6 +48,7 @@
   .index-img {
     width: 320px;
     margin-left: 40px;
+    position: relative;
   }
 
   p {
@@ -86,13 +86,14 @@
   }
 
   .doodle_bottle {
-    width: 120px;
+    width: 100px; /* Procent gør den responsiv */
+
     position: absolute;
-    top: 415px;
-    left: 133px;
+    top: 5px; /* Lidt over billedet */
+    left: 16%; /* Justér horisontal placering */
     animation: bottleFloat 3.5s ease-in-out infinite;
-    transform-origin: bottom center; /* så den vipper realistisk */
-    display: inline-block; /* vigtigt for transform */
+    transform-origin: bottom center;
+    display: inline-block;
   }
 
   @keyframes bottleFloat {
@@ -142,13 +143,7 @@
       order: 1;
     }
     .doodle_bottle {
-      width: 135px;
-      position: absolute;
-      top: 200px;
-      left: 770px;
-      animation: bottleFloat 3.5s ease-in-out infinite;
-      transform-origin: bottom center; /* så den vipper realistisk */
-      display: inline-block; /* vigtigt for transform */
+      width: 120px; /* Procent gør den responsiv */
     }
   }
 </style>

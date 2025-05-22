@@ -1,60 +1,105 @@
 ---
-
+import Button from './ButtonRound.astro'; 
 ---
 
 <footer>
-  <div class="footer-overlay"></div>
   <div class="footer-container">
-    <section>
-      <h2>Opening hours</h2>
-      <div class="hours">
-        <div>MONDAY:</div><div>CLOSED</div>
-        <div>TUESDAY:</div><div>7.30 - 18.00</div>
-        <div>WEDNESDAY:</div><div>7.30 - 18.00</div>
-        <div>THURSDAY:</div><div>7.30 - 18.00</div>
-        <div>FRIDAY:</div><div>7.30 - 18.00</div>
-        <div>SATURDAY:</div><div>9.00 - 18.00</div>
-        <div>SUNDAY:</div><div>9.00 - 15.00</div>
-      </div>
-      <p>(BREAKFAST ALL DAY)</p>
-    </section>
-    <section>
-      <h3>Information</h3>
-      <p><a href="/about">About</a></p>
-      <p><a href="#" class="no-link">Contact</a></p>
-    </section>
-    <section class="location">
-      <h3>Location</h3>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Adelgade+16%2C+1304+Copenhagen+Denmark" target="_blank">
-        Adelgade 16, 1304 KBH K
-      </a>
-    </section>
-    <section class="socials">
-      <h3>Socials</h3>
-      <a href="https://www.instagram.com/kea_kismet_eksamen/">Instagram</a>
-    </section>
+    <div class="footer-grid">
+      <section>
+        <h2>Opening hours</h2>
+        <div class="hours">
+          <div>MONDAY:</div><div>CLOSED</div>
+          <div>TUESDAY:</div><div>7.30 - 18.00</div>
+          <div>WEDNESDAY:</div><div>7.30 - 18.00</div>
+          <div>THURSDAY:</div><div>7.30 - 18.00</div>
+          <div>FRIDAY:</div><div>7.30 - 18.00</div>
+          <div>SATURDAY:</div><div>9.00 - 18.00</div>
+          <div>SUNDAY:</div><div>9.00 - 15.00</div>
+        </div>
+        <p>(BREAKFAST ALL DAY)</p>
+      </section>
+
+      <section class="middle-column">
+        <h3>Location</h3>
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Adelgade+16%2C+1304+Copenhagen+Denmark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Adelgade 16, 1304 KBH K
+        </a>
+        <h3>Socials</h3>
+        <Button
+          variant="variant_1"
+          size="medium"
+          data="instagram"
+          filter="social"
+          text="Instagram"
+          onclick={() => window.open('https://www.instagram.com/kea_kismet_eksamen/', '_blank')}
+        />
+      </section>
+
+      <section>
+        <h3>Information</h3>
+        <p><a href="/about">About</a></p>
+        <p><a href="#" class="no-link">Contact</a></p>
+      </section>
+    </div>
   </div>
 </footer>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  footer {
+    width: 100vw !important;
+    font-family: monospace;
+    color: var(--dark-green);
+    background-color: var(--beige);
+    text-align: center;
+    z-index: 1000;
+    overflow-x: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
 
-  main {
-    margin: 0;
-    padding: 0;
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6.25rem 1.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 100%;
+  }
+
+  h2,
+  h3 {
+    font-weight: 200;
+    font-style: italic;
+    letter-spacing: 0.2rem;
+  }
+
+  h2 {
+    font-size: x-large;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: large;
+    margin: 1rem 0;
   }
 
   .hours {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 0.5rem 2rem;
-    justify-content: center;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.3rem 1rem;
+    justify-content: start;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
   }
@@ -64,66 +109,23 @@
     min-width: 8rem;
   }
 
-  .hours li {
-    list-style: none;
-    margin: 0.5rem 0;
-    letter-spacing: 0.1rem;
-  }
-
-  footer {
-    position: relative;
-    font-family: monospace;
+  section {
     display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    color: #3d4b19;
-    overflow: hidden;
-    background-color: #f9f6ef;
-  }
-
-  .footer-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("/img/footer.webp");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    z-index: 0;
-  }
-
-  .footer-container {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 4rem 1rem;
-  }
-
-  h2 {
-    font-weight: 200;
-    font-style: italic;
-    font-size: xx-large;
-    padding-top: 9rem;
-    padding-bottom: 2rem;
-    letter-spacing: 0.2rem;
-  }
-
-  h3 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 200;
-    font-size: x-large;
-    font-style: italic;
-    letter-spacing: 0.2rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   section a {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
+    margin: 0.3rem 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+  }
+
+  section a:hover {
+    opacity: 0.5;
+    color: var(--light-green);
   }
 
   .no-link {
@@ -131,32 +133,19 @@
     pointer-events: none;
   }
 
-  .socials {
-    padding-bottom: 10rem;
-  }
-
-  .location a,
-  .socials a {
-    text-decoration: none;
-    color: inherit;
-    font-family: inherit;
-  }
-
   p {
-    margin: 1rem;
+    margin: 0.5rem 0;
   }
 
-  @media screen and (min-width: 800px) {
-    footer {
-      padding: 4rem 0;
+  @media screen and (max-width: 800px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
     }
 
-    .socials {
-      padding-bottom: 6rem;
-    }
-
-    h2 {
-      padding-top: 7rem;
+    section {
+      align-items: center;
     }
   }
 </style>

@@ -2,9 +2,12 @@
 
 ---
 
-<video autoplay loop muted playsinline>
-  <source src="/videos/event.mp4" type="video/mp4" />
-</video>
+<div class="video_box">
+  <h1>events</h1>
+  <video autoplay loop muted playsinline>
+    <source src="/videos/event.mp4" type="video/mp4" />
+  </video>
+</div>
 <style>
   video {
     width: 100%;
@@ -12,5 +15,20 @@
     object-fit: cover;
     display: block;
     margin: 0 0 5vh 0;
+  }
+  h1 {
+    color: var(--light-purple);
+    text-transform: uppercase;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .video_box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
 </style>

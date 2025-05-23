@@ -47,9 +47,10 @@ const data = await fetch(url, options).then((res) => res.json());
   ul {
     padding: 2vh 0 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: auto;
     list-style-type: none;
+    margin-bottom: 5vh;
   }
   nav {
     display: flex;
@@ -57,6 +58,14 @@ const data = await fetch(url, options).then((res) => res.json());
     justify-content: space-between;
     margin: 2vh 0 2vh 0;
   }
+  nav > div {
+    display: flex;
+    justify-content: flex-end; /* <-- Align children to the right */
+    gap: 0.5rem;
+    flex-wrap: wrap; /* optional, allows wrapping on small screens */
+    width: 100%; /* optional, only if you want full width alignment */
+  }
+
   p {
     color: var(--dark-purple);
     text-transform: uppercase;

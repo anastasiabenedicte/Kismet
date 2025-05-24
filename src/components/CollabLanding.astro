@@ -71,7 +71,7 @@ import CollabSlide from "./CollabSlide.astro";
 
   hr {
     margin: 60px;
-    width: 300px;
+    width: 200px;
     height: 2px;
     border: none;
     place-self: center;
@@ -81,11 +81,13 @@ import CollabSlide from "./CollabSlide.astro";
 
   h1 {
     color: var(--dark-purple);
+    text-align: center;
   }
 
   h3 {
     color: var(--dark-green);
     font-size: 25px;
+    text-align: center;
   }
 
   p {
@@ -132,25 +134,6 @@ import CollabSlide from "./CollabSlide.astro";
   #contact-toggle:checked ~ .contact-box {
     display: block;
   }
-  .slide-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin: auto;
-    box-sizing: border-box;
-    overflow: hidden; /* dette hjælper med at skjule ting der stikker ud */
-  }
-  @media (max-width: 1023px) {
-    .doodle-overlay,
-    .doodle-overlay2,
-    .doodle-overlay3 {
-      max-width: 100px;
-      top: 0;
-      left: 0;
-      right: auto;
-      transform: none;
-    }
-  }
 
   @media (min-width: 1024px) {
     hr {
@@ -178,6 +161,12 @@ import CollabSlide from "./CollabSlide.astro";
     }
     .collab-slide {
       margin-top: -70px;
+    }
+    h1 {
+      text-align: left;
+    }
+    h3 {
+      text-align: left;
     }
   }
 </style>

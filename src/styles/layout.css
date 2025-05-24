@@ -3,6 +3,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   /* font-family */
+  overflow: hidden;
 }
 
 main,

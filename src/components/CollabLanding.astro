@@ -82,12 +82,14 @@ import CollabSlide from "./CollabSlide.astro";
   h1 {
     color: var(--dark-purple);
     text-align: center;
+    margin-left: 50px;
   }
 
   h3 {
-    color: var(--dark-green);
+    color: var(--dark-purple);
     font-size: 25px;
     text-align: center;
+    margin-left: 50px;
   }
 
   p {
@@ -99,7 +101,13 @@ import CollabSlide from "./CollabSlide.astro";
     max-width: 100%;
     line-height: 1.8;
     margin-top: 60px;
-    color: var(--dark-purple);
+    color: var(--dark-green);
+    margin-left: 50px;
+    background-color: var(--beige);
+    box-shadow: 10px 10px var(--dark-purple);
+    line-height: 30px;
+    padding: 15px;
+    font-size: 14px;
   }
 
   .lookingforw {
@@ -112,7 +120,7 @@ import CollabSlide from "./CollabSlide.astro";
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin: 3rem auto;
+    margin: 2rem auto;
   }
 
   .contact-box {
@@ -138,7 +146,19 @@ import CollabSlide from "./CollabSlide.astro";
   @media (min-width: 1024px) {
     hr {
       width: 1200px;
+      margin: 40px;
     }
+    html,
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-toggle {
+      margin: -0.5rem auto;
+    }
+
     .collab-flexbox {
       flex-direction: row;
       justify-content: space-between;
@@ -146,22 +166,23 @@ import CollabSlide from "./CollabSlide.astro";
       max-width: 1120px;
       margin: 0 auto;
       padding: 0;
-      margin-top: -20px;
+      margin-top: -50px;
     }
     .collab-wrapper {
-      max-width: 440px;
-      margin-top: -30px;
+      max-width: 560px;
+      margin-top: -36px;
     }
-    .collabs-section {
-      margin-left: 60px;
-    }
+
     .lookingforw {
       place-self: center;
-      margin-top: 2rem;
+      margin-top: 40px;
     }
     .collab-slide {
-      margin-top: -70px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
+
     h1 {
       text-align: left;
     }
@@ -170,6 +191,7 @@ import CollabSlide from "./CollabSlide.astro";
     }
     .collab-text {
       text-align: left;
+      font-size: 16px;
     }
   }
 </style>

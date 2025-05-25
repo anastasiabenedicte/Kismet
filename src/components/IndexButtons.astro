@@ -3,7 +3,31 @@
 ---
 
 <section class="index-buttons">
-  <div class="button-card purple">
+  <div class="button-card abouts">
+    <img
+      class="doodle doodle-about"
+      src="/img/index_doodle_2.webp"
+      alt="doodle"
+    />
+    <a href="/about">
+      <img class="main-img" src="/img/index_button_img3.webp" alt="About" /></a
+    >
+    <a class="text" href="/about">ABOUT</a>
+  </div>
+
+  <div class="button-card menus">
+    <img
+      class="doodle doodle-about"
+      src="/img/index_doodle_2.webp"
+      alt="doodle"
+    />
+    <a href="/menu">
+      <img class="main-img" src="/img/index_button_img3.webp" alt="About" /></a
+    >
+    <a class="text" href="/menu">MENU</a>
+  </div>
+
+  <div class="button-card events">
     <img
       class="doodle doodle-event"
       src="/img/index_doodle_1_3.webp"
@@ -15,7 +39,7 @@
     <a class="text" href="/events">EVENTS</a>
   </div>
 
-  <div class="button-card green">
+  <div class="button-card collabs">
     <img
       class="doodle doodle-collab"
       src="/img/index_doodle_2.webp"
@@ -25,18 +49,6 @@
       <img class="main-img" src="/img/index_button_img2.webp" alt="Collab" /></a
     >
     <a class="text" href="/collab">COLLAB</a>
-  </div>
-
-  <div class="button-card plum">
-    <img
-      class="doodle doodle-about"
-      src="/img/index_doodle_2.webp"
-      alt="doodle"
-    />
-    <a href="/about">
-      <img class="main-img" src="/img/index_button_img3.webp" alt="About" /></a
-    >
-    <a class="text" href="/about">ABOUT</a>
   </div>
 </section>
 
@@ -119,21 +131,29 @@
     transform: translate(-50%, -50%) scale(1.08); /* 👈 her er den magiske kombi */
     color: var(--beige);
   }
-  .button-card.green .main-img {
+  .button-card.collabs .main-img {
     border-color: var(--light-green);
     /* border: 12px solid var(--light-green); */
     border-bottom: none;
     border-left: none;
-    box-shadow: 10px 10px var(--light-green);
+    box-shadow: 10px 10px var(--dark-purple);
   }
-  .button-card.purple .main-img {
+  .button-card.events .main-img {
     border-color: var(--light-purple);
     /* border: 15px solid var(--light-purple); */
     border-bottom: none;
     border-right: none;
     box-shadow: 10px 10px var(--light-purple);
   }
-  .button-card.plum .main-img {
+  .button-card.abouts .main-img {
+    border-color: var(--dark-purple);
+    /* border: 15px solid var(--plum); */
+    border-top: none;
+    border-left: none;
+    box-shadow: 10px 10px var(--light-green);
+  }
+
+  .button-card.menus .main-img {
     border-color: var(--dark-purple);
     /* border: 15px solid var(--plum); */
     border-top: none;
@@ -164,5 +184,9 @@
       flex-direction: row;
       justify-content: center;
     }
-  }
+    .button-card {
+      width: 40%;
+      max-width: 300px;
+      margin: 20px;
+    }
 </style>

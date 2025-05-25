@@ -75,11 +75,10 @@ const images = [
     width: auto;
     object-fit: cover;
     transition: opacity 0.3s ease-in-out;
-    border-radius: 4px;
   }
 
   .slide-wrapper {
-    position: relative; /* 💥 Nu kan doodle placeres FRI ovenpå alt */
+    position: relative;
     width: fit-content;
     margin: auto;
   }
@@ -122,7 +121,6 @@ const images = [
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-bottom: 2rem;
   }
 
   .slide-buttons button {
@@ -153,20 +151,24 @@ const images = [
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      margin-top: 30px;
-      margin-right: 110px;
+
+      margin-right: 68px;
     }
     .slide-buttons {
       display: flex;
       justify-content: center;
       gap: 5rem;
-      margin-right: 110px;
+      margin-right: 100px;
     }
     .doodle-overlay {
       position: absolute;
-      top: -50px;
-      right: 40px;
+      top: -90px;
+      right: 20px;
       width: 190px;
+    }
+    .slide-wrapper {
+      position: relative;
+      width: 100%; /* ikke fit-content! */
     }
   }
 </style>

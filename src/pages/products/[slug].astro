@@ -39,6 +39,13 @@ const { event, variant } = Astro.props;
       <p class="date">{event.event_date}</p>
       <h1>{event.event_title}</h1>
       <p>{event.event_text}</p>
+      <div class="price_time">
+        <p class={` ${event.event_price ? "" : "hide"}`}>
+          Price: {event.event_price},- DKK
+        </p>
+
+        <p>Time: {event.event_time.slice(0, 5)}</p>
+      </div>
       <ButtonRound text="Add to calendar" variant="variant_3" />
     </div>
   </section>
@@ -51,11 +58,14 @@ const { event, variant } = Astro.props;
     padding: 5vh;
     box-shadow: 10px 10px var(--light-green);
   }
+  .price_time {
+    margin: 2vh 0 2vh 0;
+  }
   h1 {
     font-size: 2rem;
   }
-  p {
-    margin: 2vh 0 3vh 0;
+  .hide {
+    display: none;
   }
   .date {
     margin-bottom: -1.5vh;

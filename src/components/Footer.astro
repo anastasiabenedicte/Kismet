@@ -1,11 +1,22 @@
 ---
-import Button from './ButtonRound.astro'; 
+import Button from "./ButtonRound.astro";
 ---
 
 <footer>
   <div class="footer-container">
     <div class="footer-grid">
       <section>
+        <h3>Location</h3>
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Adelgade+16%2C+1304+Copenhagen+Denmark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Adelgade 16, 1304 KBH K
+        </a>
+      </section>
+
+      <section class="middle-column">
         <h2>Opening hours</h2>
         <div class="hours">
           <div>MONDAY:</div><div>CLOSED</div>
@@ -19,30 +30,21 @@ import Button from './ButtonRound.astro';
         <p>(BREAKFAST ALL DAY)</p>
       </section>
 
-      <section class="middle-column">
-        <h3>Location</h3>
+      <section>
+        <h3>Socials</h3>
         <a
-          href="https://www.google.com/maps/dir/?api=1&destination=Adelgade+16%2C+1304+Copenhagen+Denmark"
+          href="https://www.instagram.com/kea_kismet_eksamen/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Adelgade 16, 1304 KBH K
+          <Button
+            variant="variant_1"
+            size="medium"
+            data="instagram"
+            filter="social"
+            text="Instagram"
+          />
         </a>
-        <h3>Socials</h3>
-        <Button
-          variant="variant_1"
-          size="medium"
-          data="instagram"
-          filter="social"
-          text="Instagram"
-          onclick={() => window.open('https://www.instagram.com/kea_kismet_eksamen/', '_blank')}
-        />
-      </section>
-
-      <section>
-        <h3>Information</h3>
-        <p><a href="/about">About</a></p>
-        <p><a href="#" class="no-link">Contact</a></p>
       </section>
     </div>
   </div>
@@ -67,13 +69,13 @@ import Button from './ButtonRound.astro';
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 6.25rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
   }
 
@@ -82,31 +84,30 @@ import Button from './ButtonRound.astro';
     font-weight: 200;
     font-style: italic;
     letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
   }
 
   h2 {
-    font-size: x-large;
-    margin-bottom: 1rem;
+    font-size: large;
   }
 
   h3 {
-    font-size: large;
-    margin: 1rem 0;
+    font-size: medium;
   }
 
   .hours {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 0.3rem 1rem;
+    gap: 0.2rem 1rem;
     justify-content: start;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
   }
 
   .hours > div {
     text-align: left;
-    min-width: 8rem;
+    min-width: 7rem;
   }
 
   section {
@@ -119,8 +120,11 @@ import Button from './ButtonRound.astro';
     text-decoration: none;
     color: inherit;
     font-family: inherit;
-    margin: 0.3rem 0;
-    transition: opacity 0.3s ease, color 0.3s ease;
+    margin: 0.2rem 0;
+    transition:
+      opacity 0.3s ease,
+      color 0.3s ease;
+    font-size: 0.85rem;
   }
 
   section a:hover {
@@ -128,24 +132,19 @@ import Button from './ButtonRound.astro';
     color: var(--light-green);
   }
 
-  .no-link {
-    cursor: pointer;
-    pointer-events: auto;
-  }
-
-  .no-link:hover {
-    opacity: 0.5;
-    color: var(--light-green);
-  }
-
   p {
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
+    font-size: 0.8rem;
   }
 
   @media screen and (max-width: 800px) {
+    .footer-container {
+      padding: 3rem 1.5rem;
+    }
+
     .footer-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
       text-align: center;
     }
 

@@ -16,13 +16,13 @@
 
   <div class="menu_list">
     <ul>
-      <li><a href="/about">About Kismet</a></li>
-      <li><a href="/menu">Menu</a></li>
+      <li><a href="/about" class="about">About Kismet</a></li>
+      <li><a href="/menu" class="menu">Menu</a></li>
       <a href="/index.html" class="logo">
         <img src="/img/logo.webp" alt="logo" />
       </a>
-      <li><a href="/events">Events</a></li>
-      <li><a href="/collab">Collab</a></li>
+      <li><a href="/events" class="events">Events</a></li>
+      <li><a href="/collab" class="collab">Collab</a></li>
     </ul>
   </div>
 </nav>
@@ -93,8 +93,17 @@
     color: var(--dark-green);
   }
 
-  a:hover {
+  .menu:hover {
     color: var(--light-green);
+  }
+  .collab:hover {
+    color: var(--light-purple);
+  }
+  .about:hover {
+    color: var(--light-green);
+  }
+  .events:hover {
+    color: var(--light-purple);
   }
 
   .menu_wrapper {

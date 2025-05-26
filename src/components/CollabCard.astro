@@ -41,7 +41,7 @@ const { title, description, imgSrc, flip } = Astro.props;
   h3 {
     font-family: "Fragment Mono", monospace;
     color: var(--dark-green);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -59,6 +59,12 @@ const { title, description, imgSrc, flip } = Astro.props;
     .collab-text,
     .collab-image {
       flex: 1;
+    }
+
+    .collab-text {
+      line-height: 1.8rem;
+      font-family: "Fragment Mono", monospace;
+      color: var(--dark-purple);
     }
   }
 </style>

@@ -85,7 +85,7 @@ let currentIndex = 0;
 
 <style>
   .slide-box {
-    width: 600px;
+width: 600px;
     height: 350px;
     border-radius: 5px;
     margin: 40px auto;
@@ -109,7 +109,7 @@ let currentIndex = 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+
     cursor: pointer;
     position: relative;
   }
@@ -119,7 +119,7 @@ let currentIndex = 0;
     width: auto;
     object-fit: cover;
     transition: opacity 0.3s ease-in-out;
-    box-shadow: 10px 15px var(--light-green);
+    box-shadow: 10px 10px var(--light-green);
   }
 
   .caption-wrapper {
@@ -133,7 +133,6 @@ let currentIndex = 0;
     transition: opacity 0.3s ease-in-out;
     background: rgba(255, 255, 255, 0.7);
     padding: 0.5rem 0.25rem;
-    border-radius: 3px;
     opacity: 0;
     pointer-events: none;
   }
@@ -157,9 +156,9 @@ let currentIndex = 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: whitesmoke;
-    border: 1px solid var(--dark-green);
-    color: var(--dark-green);
+    background-color: var(--beige);
+    border: 1px solid var(--dark-purple);
+    color: var(--dark-purple);
     border-radius: 50%;
     cursor: pointer;
     width: 36px;
@@ -180,7 +179,7 @@ let currentIndex = 0;
   }
 
   .slide-btn:hover {
-    background-color: var(--dark-green);
+    background-color: var(--dark-purple);
     color: var(--beige);
   }
 

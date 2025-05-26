@@ -6,7 +6,7 @@ const images = Array.from({ length: 9 }, (_, i) => ({
 ---
 
 <style>
-  main {
+  .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 250px);
@@ -14,7 +14,7 @@ const images = Array.from({ length: 9 }, (_, i) => ({
     padding: 1rem;
   }
 
-  img {
+  .gallery img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -22,34 +22,30 @@ const images = Array.from({ length: 9 }, (_, i) => ({
     transition: transform 0.3s ease;
   }
 
-  img:hover {
+  .gallery img:hover {
     transform: scale(0.9);
   }
 
   @media screen and (max-width: 800px) {
-    main {
+    .gallery {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
       gap: 10px;
     }
 
-    img {
+    .gallery img {
       height: 12rem;
     }
   }
 </style>
 
-<main id="gallery">
-  {images.map((image) => (
-    <img
-      src={image.src}
-      alt={image.alt}
-      loading="lazy"
-      decoding="async"
-    />
-  ))}
-</main>
-
+<div class="gallery" id="gallery">
+  {
+    images.map((image) => (
+      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+    ))
+  }
+</div>
 
 <script is:inline>
   const gallery = document.getElementById("gallery");

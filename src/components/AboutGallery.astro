@@ -4,7 +4,6 @@ const images = Array.from({ length: 9 }, (_, i) => ({
   alt: `Galleri billede ${i + 1}`,
 }));
 ---
-
 <style>
   .gallery {
     display: grid;
@@ -12,6 +11,7 @@ const images = Array.from({ length: 9 }, (_, i) => ({
     grid-template-rows: repeat(3, 250px);
     gap: 5px;
     padding: 1rem;
+    margin-top: 0rem;
   }
 
   .gallery img {

@@ -4,23 +4,77 @@
 
 <section>
   <h1>Menu</h1>
+  <img
+    class="doodle doodle-about-1"
+    src="/img/index_doodle_2.webp"
+    alt="doodle"
+  />
+  <img
+    class="doodle doodle-about-3"
+    src="/img/index_doodle_2.webp"
+    alt="doodle"
+  />
   <p>
-    Our menu isn’t set in stone — and that’s exactly how we like it. What we
-    cook depends on what’s fresh, in season, and inspiring right now. <br><br>The
-    changing rhythm of the seasons keeps our kitchen creative and alive, and it
-    means there’s always something new to taste when you stop by.
+    <strong>Our menu isn’t set in stone</strong> — and that’s exactly how we like
+    it.
+    <strong
+      >What we cook depends on what’s fresh, in season, and inspiring right now.</strong
+    >
+    <br /><br />
+    The changing rhythm of the seasons keeps our kitchen creative and alive, and
+    it means there’s always something new to taste when you stop by.
   </p>
 </section>
+
 <style>
+  .doodle.doodle-about-1 {
+    position: absolute;
+    top: 18rem;
+    right: 35rem;
+    height: 200px;
+    width: 200px;
+    pointer-events: none;
+    z-index: 5;
+    animation: doodleFloat 3.5s ease-in-out infinite;
+  }
+  .doodle.doodle-about-3 {
+    position: absolute;
+    top: 5rem;
+    rotate: -200deg;
+    right: 55rem;
+    height: 350px;
+    width: 300px;
+    pointer-events: none;
+    z-index: 5;
+    animation: doodleFloat 3.5s ease-in-out infinite;
+  }
+
+  @keyframes doodleFloat {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   h1 {
     text-align: center;
     color: var(--dark-green);
     text-transform: uppercase;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
   }
+
   p {
     color: var(--dark-green);
-    margin: 3vh 0 3vh 0;
+    margin: 3vh 0;
+    line-height: 1.8rem;
   }
+
   @media screen and (min-width: 800px) {
     p {
       margin: 2vh 40vh 10vh 40vh;

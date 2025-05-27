@@ -10,39 +10,79 @@ const data = await fetch(url, options).then((res) => res.json());
 console.log(data);
 ---
 
-<article>
-  <h1>{product.menu_title}</h1>
-  <p class="price">{product.price} DKK</p>
-  <img src={`/img/${product.image}`} alt="placeholder" />
-  <p>
-    {product.menu_text}
-  </p>
-</article>
+<div class="card-wrapper">
+  <article>
+    <h1>{product.menu_title}</h1>
+    <p class="price">{product.price} DKK</p>
+    <img src={`/img/${product.image}`} alt="placeholder" />
+    <div class="text-container">
+      <p>{product.menu_text}</p>
+    </div>
+  </article>
+</div>
 
 <style>
+  :root {
+    --card-width: 22rem;
+    --card-height: 28rem;
+    --text-width: 16rem;
+  }
+
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
   article {
     background-color: var(--light-purple);
-    padding: 4vh;
     color: var(--beige);
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 4;
     box-shadow: 10px 10px var(--dark-purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4vh;
+    width: var(--card-width);
+    height: var(--card-height);
+    box-sizing: border-box;
+    text-align: center;
   }
+
+  h1,
+  .price {
+    text-transform: uppercase;
+  }
+
   h1 {
     font-size: 1.7rem;
   }
-  p {
+
+  .price {
     font-size: 0.8rem;
-    text-align: center;
   }
+
   img {
     width: 50%;
-    margin: 0 auto;
   }
-  .price,
-  h1 {
-    text-align: center;
-    text-transform: uppercase;
+
+  .text-container {
+    width: var(--text-width);
+  }
+
+  .text-container p {
+
+    line-height: 1.5;
+    margin: 0 auto;
+    text-align: justify;
+    hyphens: auto;
+    word-break: break-word;
+  }
+
+  @media screen and (min-width: 800px) {
+    :root {
+      --card-width: 24rem;
+      --card-height: 30rem;
+    }
   }
 </style>

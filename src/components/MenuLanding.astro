@@ -2,81 +2,131 @@
 
 ---
 
-<section>
+<section class="menu-section">
   <h1>Menu</h1>
-  <img
-    class="doodle doodle-about-1"
-    src="/img/index_doodle_2.webp"
-    alt="doodle"
-  />
-  <img
-    class="doodle doodle-about-3"
-    src="/img/index_doodle_2.webp"
-    alt="doodle"
-  />
-  <p>
-    <strong>Our menu isn’t set in stone</strong> — and that’s exactly how we like
-    it.
-    <strong
-      >What we cook depends on what’s fresh, in season, and inspiring right now.</strong
-    >
-    <br /><br />
-    The changing rhythm of the seasons keeps our kitchen creative and alive, and
-    it means there’s always something new to taste when you stop by.
-  </p>
+  <div class="menu-text-wrapper">
+    <p>
+      <strong>Our menu isn’t set in stone</strong> — and that’s exactly how we like
+      it. What we cook depends on what’s fresh, in season, and inspiring right now.
+      <br /><br />
+      The changing rhythm of the seasons keeps our kitchen creative and alive, and
+      it means there’s always something new to taste when you stop by.
+    </p>
+  </div>
+
+  <div class="scroll-gallery">
+    <div class="scroll-track">
+      <img src="/public/img/food-1.webp" alt="food 1" />
+      <img src="/public/img/food-2.webp" alt="food 2" />
+      <img src="/public/img/food-3.webp" alt="food 3" />
+      <img src="/public/img/food-4.webp" alt="food 4" />
+      <img src="/public/img/food-5.webp" alt="food 5" />
+      <img src="/public/img/food-6.webp" alt="food 6" />
+      <img src="/public/img/food-7.webp" alt="food 7" />
+      <img src="/public/img/food-8.webp" alt="food 8" />
+      <img src="/public/img/food-9.webp" alt="food 9" />
+      <img src="/public/img/food-10.webp" alt="food 10" />
+      <img src="/public/img/food-11.webp" alt="food 11" />
+      <img src="/public/img/food-12.webp" alt="food 12" />
+      <img src="/public/img/food-13.webp" alt="food 13" />
+      <img src="/public/img/food-14.webp" alt="food 14" />
+    </div>
+  </div>
 </section>
 
 <style>
-  .doodle.doodle-about-1 {
-    position: absolute;
-    top: 12rem;
-    right: 36rem;
-    height: 200px;
-    width: 200px;
-    pointer-events: none;
-    z-index: 5;
-    animation: doodleFloat 3.5s ease-in-out infinite;
-  }
-  .doodle.doodle-about-3 {
-    position: absolute;
-    top: 2rem;
-    rotate: -200deg;
-    right: 55rem;
-    height: 350px;
-    width: 300px;
-    pointer-events: none;
-    z-index: 5;
-    animation: doodleFloat 3.5s ease-in-out infinite;
-  }
-
-  @keyframes doodleFloat {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  .menu-section {
+    position: relative;
+    padding: 0rem 1rem;
+    text-align: center;
   }
 
   h1 {
-    text-align: center;
     color: var(--dark-green);
     text-transform: uppercase;
+    text-align: center;
+  }
+
+  .menu-text-wrapper {
+    display: inline-block;
+    background-color: var(--beige);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 50vw;
+    margin: 0 auto 2rem auto;
+    text-align: left;
+          box-shadow 0.3s ease-in-out;
+    box-shadow: 8px 8px var(--light-purple);
   }
 
   p {
     color: var(--dark-green);
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
+  }
+
+  .scroll-gallery {
+    overflow: hidden;
+    width: 80vw;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
+  .scroll-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+  }
+
+  .scroll-track img {
+    height: 120px;
+    width: auto;
+    margin-right: 0.4rem;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 
   @media screen and (min-width: 800px) {
+    h1 {
+      margin-top: -6rem;
+    }
+
+    .menu-section {
+      padding: 6rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .menu-text-wrapper {
+      max-width: 500px;
+      padding: 1.5rem 3rem;
+      margin-bottom: 5rem;
+    }
+
     p {
       max-width: 500px;
+    }
+
+    .scroll-gallery {
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .scroll-track {
+      animation-duration: 20s;
+    }
+
+    .scroll-track img {
+      height: 250px;
+      margin-right: 1rem;
     }
   }
 </style>

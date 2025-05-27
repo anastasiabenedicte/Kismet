@@ -11,7 +11,7 @@ const { variant, text, size, id } = Astro.props;
     display: inline-block;
     padding: 10px;
     background-color: var(--beige);
-    border: 1px solid var(--dark-green);
+    border: 1px solid var(--dark-purple);
     color: var(--dark-purple);
     font-family: "Fragment Mono", monospace;
     text-transform: uppercase;
@@ -22,6 +22,7 @@ const { variant, text, size, id } = Astro.props;
   }
 
   .button-square:hover {
-    opacity: 0.5;
+    color: var(--beige);
+    background-color: var(--dark-purple);
   }
 </style>

@@ -47,14 +47,11 @@
   }
 
   .index-img {
-    width: 350px;
-
     position: relative;
   }
 
   p {
     color: var(--dark-green);
-    width: 370px;
     background-color: var(--beige);
     box-shadow: 10px 10px var(--dark-green);
     line-height: 30px;
@@ -109,7 +106,20 @@
       transform: rotate(-5deg);
     }
   }
-
+  @media (min-width: 350px) {
+    .index-img {
+      width: 350px;
+    }
+  }
+  @media (min-width: 600px) {
+    p {
+      width: 450px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+  }
   @media (min-width: 1024px) {
     p {
       width: 450px;
@@ -118,7 +128,9 @@
     hr {
       width: 70rem;
     }
-
+    h1 {
+      text-align: start;
+    }
     .index-img {
       width: 400px;
 

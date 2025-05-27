@@ -71,7 +71,7 @@ import CollabSlide from "./CollabSlide.astro";
 
   hr {
     margin: 60px;
-    width: 200px;
+
     height: 2px;
     border: none;
     place-self: center;
@@ -82,14 +82,11 @@ import CollabSlide from "./CollabSlide.astro";
   h1 {
     color: var(--dark-purple);
     text-align: center;
-    margin-left: 50px;
   }
 
   h3 {
     color: var(--dark-purple);
-    font-size: 25px;
     text-align: center;
-    margin-left: 50px;
   }
 
   p {
@@ -97,16 +94,12 @@ import CollabSlide from "./CollabSlide.astro";
   }
 
   .collab-text {
-    text-align: center;
     max-width: 100%;
     line-height: 1.8;
     margin-top: 60px;
     color: var(--dark-green);
-    margin-left: 50px;
-
     line-height: 30px;
-    padding: 15px;
-    font-size: 14px;
+    padding: 0 15px 0 15px;
   }
 
   .lookingforw {
@@ -142,9 +135,8 @@ import CollabSlide from "./CollabSlide.astro";
     display: block;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 800px) {
     hr {
-      width: 1200px;
       margin: 40px;
     }
     html,
@@ -182,15 +174,15 @@ import CollabSlide from "./CollabSlide.astro";
       align-items: flex-end;
     }
 
-    h1 {
-      text-align: left;
-    }
+    h1,
     h3 {
       text-align: left;
+      margin-left: 50px;
     }
+
     .collab-text {
       text-align: left;
-      font-size: 16px;
+      margin-left: 50px;
     }
   }
 </style>

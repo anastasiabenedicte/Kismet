@@ -16,10 +16,13 @@ let currentIndex = 0;
 
   <div class="slide">
     <div class="img-wrap" id="img-wrap">
-      <img id="slide-img" src={images[0]} alt="about slide" />
+      <img id="slide-img" src="/img/about-3.webp" alt="about slide" />
 
       <div class="caption-wrapper" id="caption-wrapper">
-        <p id="caption" class="caption">{captions[0]}</p>
+        <p id="caption" class="caption">
+          "We wanted to create an authentic place that combines people through a
+          shared love of quality and seasonal flavors."
+        </p>
       </div>
     </div>
   </div>
@@ -29,64 +32,67 @@ let currentIndex = 0;
   </button>
 </div>
 
-<script type="module" is:inline>
-  const images = [
-    "/img/about-3.webp",
-    "/img/about-1.webp",
-    "/img/about-2.webp",
-  ];
-  const captions = [
-    '"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors."',
-    "Meet Hugo, baker at KISMET.",
-    "This is Adam. Cofounder of KISMET.",
-  ];
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = [
+      "/img/about-3.webp",
+      "/img/about-1.webp",
+      "/img/about-2.webp",
+    ];
+    const captions = [
+      '"We wanted to create an authentic place that combines people through a shared love of quality and seasonal flavors."',
+      "Meet Hugo, baker at KISMET.",
+      "This is Adam. Cofounder of KISMET.",
+    ];
 
-  let currentIndex = 0;
+    let currentIndex = 0;
 
-  const imgElement = document.getElementById("slide-img");
-  const captionElement = document.getElementById("caption");
-  const captionWrapper = document.getElementById("caption-wrapper");
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
-  const imgWrap = document.getElementById("img-wrap");
+    const imgElement = document.getElementById("slide-img");
+    const captionElement = document.getElementById("caption");
+    const captionWrapper = document.getElementById("caption-wrapper");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const imgWrap = document.getElementById("img-wrap");
 
-  function updateImage() {
-    imgElement.style.opacity = 0;
-    captionElement.style.opacity = 0;
+    function updateImage() {
+      imgElement.style.opacity = 0;
+      captionElement.style.opacity = 0;
 
-    setTimeout(() => {
-      imgElement.src = images[currentIndex];
-      captionElement.textContent = captions[currentIndex];
-      imgElement.style.opacity = 1;
-      captionElement.style.opacity = 1;
+      setTimeout(() => {
+        imgElement.src = images[currentIndex];
+        captionElement.textContent = captions[currentIndex];
+        imgElement.style.opacity = 1;
+        captionElement.style.opacity = 1;
 
-      if (window.innerWidth <= 768) {
-        captionWrapper.classList.remove("show-caption");
-      }
-    }, 300);
-  }
-
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImage();
-  });
-
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImage();
-  });
-
-  imgWrap.addEventListener("click", () => {
-    if (window.innerWidth <= 768) {
-      captionWrapper.classList.toggle("show-caption");
+        if (window.innerWidth <= 768) {
+          captionWrapper.classList.remove("show-caption");
+        }
+      }, 300);
     }
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateImage();
+    });
+
+    imgWrap.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        captionWrapper.classList.toggle("show-caption");
+      }
+    });
   });
 </script>
 
 <style>
   .slide-box {
- width: 600px;
-    height: 350px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     border-radius: 5px;
     margin: 40px auto;
     display: flex;
@@ -98,28 +104,32 @@ let currentIndex = 0;
   }
 
   .slide {
-    margin-top: -5rem;
+    margin-top: 0;
     position: relative;
     width: 100%;
   }
 
   .img-wrap {
-    width: 600px;
-    height: 350px;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
     position: relative;
+    margin: 0 auto;
   }
 
   .img-wrap img {
-    height: 100%;
-    width: auto;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     object-fit: cover;
-    transition: opacity 0.3s ease-in-out;
-    box-shadow: 10px 10px var(--light-green);
+    transition:
+      opacity 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out;
+    box-shadow: 4px 4px var(--light-green);
   }
 
   .caption-wrapper {
@@ -137,25 +147,23 @@ let currentIndex = 0;
     pointer-events: none;
   }
 
+  .caption-wrapper.show-caption {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .caption {
     margin: 0;
     font-style: italic;
     color: var(--dark-green);
     text-align: center;
     transition: opacity 0.3s ease-in-out;
-  }
-
-  @media (min-width: 801px) {
-    .img-wrap:hover .caption-wrapper {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    font-size: 0.8rem;
   }
 
   .slide-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 60px;
     background-color: var(--beige);
     border: 1px solid var(--dark-purple);
     color: var(--dark-purple);
@@ -178,40 +186,55 @@ let currentIndex = 0;
     vertical-align: middle;
   }
 
-  .slide-btn:hover {
-    background-color: var(--dark-purple);
-    color: var(--beige);
+  .prev-btn,
+  .next-btn {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    background-color: var(--beige);
+    border: 1px solid var(--dark-purple);
+    color: var(--dark-purple);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    user-select: none;
+    z-index: 10;
   }
 
   .prev-btn {
-    left: 40px;
+    left: -25px;
   }
 
   .next-btn {
-    right: 40px;
+    right: -25px;
   }
 
-  @media (max-width: 800px) {
-      .prev-btn {
-    left: -45px;
-  }
-
-  .next-btn {
-    right: -45px;
-  }
+  @media (min-width: 801px) {
     .slide-box {
-      width: 100%;
-      height: auto;
+      height: 350px;
+      margin-top: 40px;
+    }
+
+    .slide {
+      margin-top: -5rem;
     }
 
     .img-wrap {
-      width: 100%;
-      height: auto;
+      width: 600px;
+      height: 350px;
+      margin: 0;
     }
 
     .img-wrap img {
-      width: 100%;
-      height: auto;
+      height: 100%;
+      width: auto;
+      box-shadow: 10px 10px var(--light-green);
     }
 
     .caption-wrapper {
@@ -219,13 +242,26 @@ let currentIndex = 0;
       pointer-events: none;
     }
 
-    .caption-wrapper.show-caption {
+    .img-wrap:hover .caption-wrapper {
       opacity: 1;
       pointer-events: auto;
     }
 
     .caption {
-      font-size: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .slide-btn {
+      top: 50%;
+      bottom: auto;
+    }
+
+    .prev-btn {
+      left: 40px;
+    }
+
+    .next-btn {
+      right: 40px;
     }
   }
 </style>

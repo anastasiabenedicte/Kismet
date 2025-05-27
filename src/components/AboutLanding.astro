@@ -7,12 +7,12 @@ import AboutGallery from "./AboutGallery.astro";
 <section class="container">
   <h1>ABOUT</h1>
   <AboutSlide />
-  <p>
+  <p class="about-text">
     Our team is full of passionate food lovers who test, experiment, and
     handpick the best seasonal ingredients — from fresh loaves to homemade
-    kefir. <br> <br>Swing by for a pastry, stay for the vibe — there’s always good food,
-    good people, and time for a quick chat. We can’t wait to share it all with
-    you!
+    kefir. <br /><br />
+    Swing by for a pastry, stay for the vibe — there’s always good food, good people,
+    and time for a quick chat. We can’t wait to share it all with you!
   </p>
   <h1>OUR STAFF</h1>
   <AboutGallery />
@@ -24,7 +24,6 @@ import AboutGallery from "./AboutGallery.astro";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -32,27 +31,32 @@ import AboutGallery from "./AboutGallery.astro";
 
   h1 {
     color: var(--light-green);
-    margin-top: -4rem;
-       margin-bottom: -1rem;
+    margin-bottom: -1rem;
   }
 
-  p {
-max-width: 600px;
-    width: 100%;
-    padding: 0 1rem;
+  .about-text {
+    width: 90%;
+    max-width: 600px;
+    padding: 0;
     text-align: left;
     hyphens: auto;
     overflow-wrap: break-word;
     word-wrap: break-word;
     color: var(--dark-green);
-    font-size: 16px;
-    margin-bottom: 8rem;
-    line-height: 1.8;
-    margin-top: -1rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+       max-width: 30rem;
   }
-    @media screen and (max-width: 800px) {
-        h1 {
-          font-size: 4rem;
-        }
+
+  @media screen and (min-width: 801px) {
+    h1 {
+      font-size: 4rem;
     }
+
+    .about-text {
+      margin-top: 0rem;
+      margin-bottom: 6rem;
+      max-width: 40rem;
+    }
+  }
 </style>

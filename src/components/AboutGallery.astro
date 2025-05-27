@@ -4,19 +4,19 @@ const images = Array.from({ length: 9 }, (_, i) => ({
   alt: `Galleri billede ${i + 1}`,
 }));
 ---
+
 <style>
   .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 250px);
-    gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     padding: 1rem;
-    margin-top: 0rem;
+    margin-top: 0;
   }
 
   .gallery img {
     width: 100%;
-    height: 100%;
+    height: 12rem;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
@@ -26,52 +26,54 @@ const images = Array.from({ length: 9 }, (_, i) => ({
     transform: scale(0.9);
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (min-width: 800px) {
     .gallery {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 250px);
+      gap: 5px;
     }
 
     .gallery img {
-      height: 12rem;
+      height: 100%;
     }
   }
 </style>
 
 <div class="gallery" id="gallery">
-  {
-    images.map((image) => (
-      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
-    ))
-  }
+  {images.map((image) => (
+    <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+  ))}
 </div>
 
 <script is:inline>
-  const gallery = document.getElementById("gallery");
-  let mobileImageAdded = false;
+  document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.getElementById("gallery");
+    let mobileImageAdded = false;
 
-  function updateGallery() {
-    if (window.innerWidth <= 800) {
-      if (!mobileImageAdded) {
-        const templateImg = gallery.querySelector("img");
-        const img = templateImg.cloneNode();
-        img.src = "/img/staff-10.webp";
-        img.alt = "Galleri billede 10";
-        gallery.appendChild(img);
-        mobileImageAdded = true;
-      }
-    } else {
-      if (mobileImageAdded) {
-        const imgs = gallery.querySelectorAll("img");
-        if (imgs.length > 9) {
-          gallery.removeChild(imgs[imgs.length - 1]);
+    function updateGallery() {
+      if (window.innerWidth <= 800) {
+        if (!mobileImageAdded) {
+          const templateImg = gallery.querySelector("img");
+          if (templateImg) {
+            const img = templateImg.cloneNode();
+            img.src = "/img/staff-10.webp";
+            img.alt = "Galleri billede 10";
+            gallery.appendChild(img);
+            mobileImageAdded = true;
+          }
         }
-        mobileImageAdded = false;
+      } else {
+        if (mobileImageAdded) {
+          const imgs = gallery.querySelectorAll("img");
+          if (imgs.length > 9) {
+            gallery.removeChild(imgs[imgs.length - 1]);
+          }
+          mobileImageAdded = false;
+        }
       }
     }
-  }
 
-  updateGallery();
-  window.addEventListener("resize", updateGallery);
+    updateGallery();
+    window.addEventListener("resize", updateGallery);
+  });
 </script>

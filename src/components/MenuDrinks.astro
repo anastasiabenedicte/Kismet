@@ -11,6 +11,8 @@ const data = await fetch(url, options).then((res) => res.json());
 console.log(data);
 ---
 
+<h1>DRINKS.</h1>
+
 <ul>{data.map((product) => <MenuCard {product} />)}</ul>
 
 <style>
@@ -22,5 +24,13 @@ console.log(data);
     list-style-type: none;
     gap: 20px;
     margin-bottom: 5vh;
+  }
+  h1 {
+    text-align: center;
+    color: var(--light-green);
+    font-size: 8rem;
+    margin-top: 4rem;
+    font-family: "Fragment Mono", monospace;
+    font-style: italic;
   }
 </style>

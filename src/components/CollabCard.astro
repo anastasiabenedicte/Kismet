@@ -20,16 +20,15 @@ const { title, description, imgSrc, flip } = Astro.props;
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 4rem;
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .collab-text {
-    background: white;
+    background: var(--beige);
+    color: var(--dark-purple);
+    box-shadow: 10px 10px var(--dark-purple);
     padding: 1rem;
     padding: 15px;
-    line-height: 25px;
-    font-family: "Fragment Mono", monospace;
-    color: var(--dark-purple);
   }
 
   .collab-image img {
@@ -59,12 +58,6 @@ const { title, description, imgSrc, flip } = Astro.props;
     .collab-text,
     .collab-image {
       flex: 1;
-    }
-
-    .collab-text {
-      line-height: 1.8rem;
-      font-family: "Fragment Mono", monospace;
-      color: var(--dark-purple);
     }
   }
 </style>

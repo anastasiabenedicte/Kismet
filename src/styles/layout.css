@@ -1,9 +1,8 @@
 body {
-  min-height: 100svh;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   /* font-family */
- 
 }
 
 main,
@@ -11,6 +10,7 @@ header > nav,
 footer > * {
   width: 100%;
   max-width: 1120px;
+  min-width: 320px;
   margin-inline: auto;
   margin-top: 17vh;
 }

@@ -110,7 +110,7 @@ let currentIndex = 0;
   }
 
   .img-wrap {
-    width: 90%;
+    width: 62%;
     max-width: 600px;
     height: auto;
     display: flex;
@@ -159,6 +159,7 @@ let currentIndex = 0;
     text-align: center;
     transition: opacity 0.3s ease-in-out;
     font-size: 0.8rem;
+    line-height: 1rem;
   }
 
   .slide-btn {
@@ -181,7 +182,7 @@ let currentIndex = 0;
   }
 
   .arrow {
-    font-size: 1rem;
+    font-size: 0.75rem;
     display: inline-block;
     vertical-align: middle;
   }
@@ -196,9 +197,9 @@ let currentIndex = 0;
     color: var(--dark-purple);
     border-radius: 50%;
     cursor: pointer;
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,14 +209,32 @@ let currentIndex = 0;
   }
 
   .prev-btn {
-    left: -25px;
+    left: 2rem;
   }
 
   .next-btn {
-    right: -25px;
+    right: 2rem;
   }
-
   @media (min-width: 800px) {
+    .arrow {
+      font-size: 1rem;
+    }
+
+    .prev-btn,
+    .next-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 1.2rem;
+    }
+
+    .prev-btn {
+      left: 3.5rem;
+    }
+
+    .next-btn {
+      right: 3.5rem;
+    }
+
     .slide-box {
       height: 350px;
       margin-top: 40px;
@@ -254,14 +273,6 @@ let currentIndex = 0;
     .slide-btn {
       top: 50%;
       bottom: auto;
-    }
-
-    .prev-btn {
-      left: 40px;
-    }
-
-    .next-btn {
-      right: 40px;
     }
   }
 </style>

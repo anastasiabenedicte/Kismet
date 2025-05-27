@@ -40,25 +40,27 @@ const data = await fetch(url, options).then((res) => res.json());
     />
   </div>
 </nav>
+
 <ul class="event_container">
   {data.map((product) => <EventCard {product} />)}
 </ul>
+
 <style>
   ul {
-    padding: 2vh 0 0 0;
+    padding-top: 2vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: auto;
-    list-style-type: none;
+    list-style: none;
     margin-bottom: 5vh;
   }
 
   nav > div {
     display: flex;
-    justify-content: flex-start; /* <-- Align children to the right */
+    justify-content: flex-start;
     gap: 0.5rem;
-    flex-wrap: wrap; /* optional, allows wrapping on small screens */
-    width: 100%; /* optional, only if you want full width alignment */
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   p {
@@ -69,6 +71,7 @@ const data = await fetch(url, options).then((res) => res.json());
   .hidden {
     display: none;
   }
+
   @media screen and (min-width: 800px) {
     ul {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -77,44 +80,31 @@ const data = await fetch(url, options).then((res) => res.json());
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 2vh 0 2vh 0;
+      margin: 2vh 0;
     }
     nav > div {
-      display: flex;
-      justify-content: flex-end; /* <-- Align children to the right */
-      gap: 0.5rem;
-      flex-wrap: wrap; /* optional, allows wrapping on small screens */
-      width: 100%; /* optional, only if you want full width alignment */
+      justify-content: flex-end;
     }
   }
 </style>
 
 <script>
-  const buttons = document.querySelectorAll("#filter-btn");
-
+  const buttons = document.querySelectorAll("[filter='filter-btn']");
   const cards = document.querySelectorAll(".event_container a");
-
-  console.log(buttons);
-  console.log(cards);
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      buttons.forEach((button) => {
-        button.classList.remove("variant_2");
-        button.classList.add("variant_1");
+      buttons.forEach((btn) => {
+        btn.classList.remove("variant_2");
+        btn.classList.add("variant_1");
       });
-
       button.classList.add("variant_2");
 
-      const filteractive = button.getAttribute("data-filter");
-
-      console.log(filteractive);
+      const filterActive = button.getAttribute("data");
 
       cards.forEach((card) => {
-        if (
-          filteractive === "all" ||
-          card.getAttribute("data-filter")?.toLowerCase() == filteractive
-        ) {
+        const cardFilter = card.getAttribute("data-filter")?.toLowerCase();
+        if (filterActive === "all" || cardFilter === filterActive) {
           card.classList.remove("hidden");
         } else {
           card.classList.add("hidden");

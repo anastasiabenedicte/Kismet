@@ -40,30 +40,31 @@ const images = Array.from({ length: 9 }, (_, i) => ({
 </style>
 
 <div class="gallery" id="gallery">
-  {images.map((image) => (
+  {
+    images.map((image) => (
       <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
-  ))}
+    ))
+  }
 </div>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.getElementById("gallery");
-  let mobileImageAdded = false;
+    const gallery = document.getElementById("gallery");
+    let mobileImageAdded = false;
 
-  function updateGallery() {
-    if (window.innerWidth <= 800) {
-      if (!mobileImageAdded) {
-        const templateImg = gallery.querySelector("img");
+    function updateGallery() {
+      if (window.innerWidth <= 800) {
+        if (!mobileImageAdded) {
+          const templateImg = gallery.querySelector("img");
           if (templateImg) {
-        const img = templateImg.cloneNode();
-        img.src = "/img/staff-10.webp";
-        img.alt = "Galleri billede 10";
-        gallery.appendChild(img);
-        mobileImageAdded = true;
-      }
+            const img = templateImg.cloneNode();
+            img.src = "/img/staff-10.webp";
+            img.alt = "Galleri billede 10";
+            gallery.appendChild(img);
+            mobileImageAdded = true;
+          }
         }
-    } else {
-      if (mobileImageAdded) {
+      } else if (mobileImageAdded) {
         const imgs = gallery.querySelectorAll("img");
         if (imgs.length > 9) {
           gallery.removeChild(imgs[imgs.length - 1]);
@@ -71,9 +72,8 @@ const images = Array.from({ length: 9 }, (_, i) => ({
         mobileImageAdded = false;
       }
     }
-  }
 
-  updateGallery();
-  window.addEventListener("resize", updateGallery);
+    updateGallery();
+    window.addEventListener("resize", updateGallery);
   });
 </script>

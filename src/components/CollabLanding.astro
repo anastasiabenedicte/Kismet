@@ -10,44 +10,23 @@ import CollabSlide from "./CollabSlide.astro";
   </div>
 
   <div class="collab-flexbox">
-    <!-- TEKST FØRST = VENSTRE på desktop -->
     <div class="collab-wrapper">
       <p class="collab-text">
         Kismet is a café in the heart of Copenhagen, known for its unique vibe
         and creative events. We love collaborating with exciting brands and
         individuals who share our values. Feel free to reach out if you have an
-        idea for a collab - we only accept inquiries via email.
+        idea for a collab — we only accept inquiries via email.
       </p>
     </div>
 
-    <!-- SLIDER EFTER = HØJRE på desktop -->
     <div class="collab-slide">
       <CollabSlide />
     </div>
   </div>
 </section>
 
-<!-- <section class="collabs-section">
-  <div class="collab-text-side">
-    <h1>COLLABS</h1>
-
-    <p>Interested in doing a collab with us?</p>
-  </div>
-  <CollabSlide />
-</section> -->
-
-<!-- <div class="collab-wrapper">
-  <p class="collab-text">
-    Kismet is a café in the heart of Copenhagen, known for its unique vibe and
-    creative events. We love collaborating with exciting brands and individuals
-    who share our values. Feel free to reach out if you have an idea for a
-    collab - we only accept inquiries via email.
-  </p>
-</div> -->
-
 <div class="contact-toggle">
   <input type="checkbox" id="contact-toggle" hidden />
-
   <ButtonRound text="Contact us" variant="variant_1" id="contact-toggle" />
 
   <div id="contact-box" class="contact-box">
@@ -57,33 +36,26 @@ import CollabSlide from "./CollabSlide.astro";
   </div>
 </div>
 
-<p class="lookingforw">We are looking forward to hear from you:)</p>
+<p class="lookingforw">We are looking forward to hear from you :)</p>
 
 <hr />
 
 <style>
   .collab-flexbox {
     display: flex;
-    flex-direction: column-reverse; /* MOBIL: slider først */
+    flex-direction: column-reverse;
     gap: 2rem;
     padding: 2rem;
   }
 
   hr {
     margin: 60px;
-
     height: 2px;
     border: none;
-    place-self: center;
-    place-content: center;
     background-color: var(--light-purple);
   }
 
-  h1 {
-    color: var(--dark-purple);
-    text-align: center;
-  }
-
+  h1,
   h2 {
     color: var(--dark-purple);
     text-align: center;
@@ -120,11 +92,8 @@ import CollabSlide from "./CollabSlide.astro";
     margin-top: 1rem;
     padding: 2rem;
     background-color: var(--beige);
-    /* border: 4px solid var(--beige); */
     box-shadow: 10px 10px var(--dark-green);
-
     color: var(--beige);
-
     display: none;
     transition: all 0.8s ease;
   }
@@ -132,6 +101,7 @@ import CollabSlide from "./CollabSlide.astro";
   .contact-box p {
     color: var(--dark-purple);
   }
+
   #contact-toggle:checked ~ .contact-box {
     display: block;
   }
@@ -140,6 +110,7 @@ import CollabSlide from "./CollabSlide.astro";
     hr {
       margin: 40px;
     }
+
     html,
     body {
       overflow-x: hidden;
@@ -160,15 +131,16 @@ import CollabSlide from "./CollabSlide.astro";
       padding: 0;
       margin-top: -50px;
     }
+
     .collab-wrapper {
       max-width: 560px;
       margin-top: -36px;
     }
 
     .lookingforw {
-      place-self: center;
       margin-top: 40px;
     }
+
     .collab-slide {
       display: flex;
       flex-direction: column;

@@ -1,7 +1,3 @@
----
-
----
-
 <section class="Index-section">
   <div class="index-text-side">
     <h1>CAFÉ & BAKERY</h1>
@@ -41,6 +37,7 @@
     max-width: 100%;
     overflow-x: hidden;
   }
+
   h1 {
     color: var(--dark-green);
     margin-bottom: 70px;
@@ -54,9 +51,7 @@
     color: var(--dark-green);
     background-color: var(--beige);
     box-shadow: 10px 10px var(--dark-green);
-
     padding: 15px;
-
     margin-bottom: 70px;
   }
 
@@ -75,6 +70,7 @@
     border: none;
     margin: 2rem auto;
   }
+
   .wrap-img-h3 {
     display: flex;
     flex-direction: column;
@@ -84,11 +80,10 @@
   }
 
   .doodle_bottle {
-    width: 100px; /* Procent gør den responsiv */
-
+    width: 100px;
     position: absolute;
-    top: 5px; /* Lidt over billedet */
-    left: 16%; /* Justér horisontal placering */
+    top: 5px;
+    left: 16%;
     animation: bottleFloat 3.5s ease-in-out infinite;
     transform-origin: bottom center;
     display: inline-block;
@@ -105,11 +100,13 @@
       transform: rotate(-5deg);
     }
   }
+
   @media (min-width: 350px) {
     .index-img {
       width: 350px;
     }
   }
+
   @media (min-width: 600px) {
     p {
       width: 450px;
@@ -119,6 +116,7 @@
       text-align: center;
     }
   }
+
   @media (min-width: 1024px) {
     p {
       width: 450px;
@@ -132,9 +130,7 @@
     }
     .index-img {
       width: 360px;
-
       order: 2;
-      /* bottom: 25.5rem; */
       position: relative;
       margin-top: -360px;
       margin-left: 70px;
@@ -145,22 +141,20 @@
       align-items: flex-start;
       gap: 3rem;
     }
-
     .index-text {
       padding-left: 25px;
       margin-left: 10px;
       position: relative;
       bottom: 10px;
     }
-
     .no-res {
       font-size: 20px;
-      margin-top: 4.8rem; /* justér så den flugter med toppen af billedet */
+      margin-top: 4.8rem;
       order: 1;
       width: 600px;
     }
     .doodle_bottle {
-      width: 120px; /* Procent gør den responsiv */
+      width: 120px;
     }
   }
 </style>

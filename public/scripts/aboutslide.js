@@ -1,9 +1,4 @@
-const images = [
- "img/about-1.webp",     
-  "/img/about-2.webp",     
-  "/img/about-3.webp",   
-];
-
+const images = ["/img/about-1.webp", "/img/about-2.webp", "/img/about-3.webp"];
 
 let currentIndex = 0;
 

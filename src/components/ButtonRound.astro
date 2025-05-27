@@ -6,9 +6,9 @@ console.log(filters);
 ---
 
 <button
-  class={` ${variant} ${size} ${data} `}
-  id={`${filter}`}
-  data-filter={`${data}`}
+  class={`${variant} ${size} ${data}`}
+  id={filter}
+  data-filter={data}
 >
   {text}
 </button>
@@ -21,38 +21,40 @@ console.log(filters);
     text-transform: uppercase;
   }
 
-  .variant_1:hover {
-    color: var(--beige);
-    background-color: var(--dark-purple);
-  }
   .variant_1 {
     background-color: var(--beige);
     border: solid 1px var(--dark-purple);
     color: var(--dark-purple);
   }
-  .variant_2:hover {
-    background-color: var(--beige);
-    color: var(--dark-purple);
+  .variant_1:hover {
+    background-color: var(--dark-purple);
+    color: var(--beige);
   }
+
   .variant_2 {
     background-color: var(--dark-purple);
     border: solid 1px var(--dark-purple);
     color: var(--beige);
+  }
+  .variant_2:hover {
+    background-color: var(--beige);
+    color: var(--dark-purple);
+  }
+
+  .variant_3 {
+    background-color: var(--beige);
+    border: solid 1px var(--dark-green);
+    color: var(--dark-green);
   }
   .variant_3:hover {
     background-color: var(--dark-green);
     color: var(--beige);
     border: solid 1px var(--beige);
   }
-  .variant_3 {
-    background-color: var(--beige);
-    border: solid 1px var(--dark-green);
-    color: var(--dark-green);
-  }
+
   .variant_4 {
     background-color: var(--beige);
     border: solid 1px var(--dark-purple);
     color: var(--dark-purple);
   }
 </style>
-<script></script>

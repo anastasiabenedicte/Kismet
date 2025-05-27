@@ -1,7 +1,3 @@
----
-
----
-
 <nav id="navbar" class="navbar">
   <div class="mobile">
     <a href="/index.html" class="logo">
@@ -50,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 5vh 0 5vh;
+    margin: 0 5vh;
   }
 
   .navbar {
@@ -59,25 +55,24 @@
     background-color: transparent;
     transition: background-color 0.1s ease;
     position: fixed;
-    top: 0;
     left: 0;
     width: 100vw;
-    padding: 3vh 0 3vh 0;
+    padding: 3vh 0;
   }
 
   .navbar.scrolled {
     background-color: var(--beige);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
   }
+
+  .navbar.active,
   #navbar.active {
     background-color: var(--dark-green);
   }
+
   #navbar.active .logo {
     opacity: 0;
   }
+
   span {
     font-family: "Fragment Mono", monospace;
     margin: 2vh;
@@ -145,9 +140,7 @@
     align-items: flex-end;
     cursor: pointer;
   }
-  .navbar.active {
-    background-color: var(--dark-green);
-  }
+
   .menu_icon.active .line:nth-child(2) {
     opacity: 0;
   }
@@ -179,7 +172,7 @@
       justify-content: space-between;
       align-items: center;
       list-style: none;
-      margin: 0 25vh 0 25vh;
+      margin: 0 25vh;
     }
 
     .menu_list {
@@ -204,7 +197,6 @@
     if (!navbar || !menuIcon) return;
 
     window.addEventListener("scroll", () => {
-      // Don't apply 'scrolled' if the burger menu is active
       if (window.scrollY > 10 && !menuIcon.classList.contains("active")) {
         navbar.classList.add("scrolled");
       } else {

@@ -3,11 +3,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import ButtonRound from "../../components/ButtonRound.astro";
 
-const { text } = Astro.props;
-
 export async function getStaticPaths() {
-  /*const response = await fetch("...");
-  const data = await response.json();*/
   const url = "https://ugqyjglpqvlnxrizrviv.supabase.co/rest/v1/events";
   const key =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVncXlqZ2xwcXZsbnhyaXpydml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyOTY1MjgsImV4cCI6MjA2Mjg3MjUyOH0.o34_Vq2MYjWQWAExvv8dp2e5I5p6bE7UNxj3s36Boz0";
@@ -15,35 +11,29 @@ export async function getStaticPaths() {
   const options = { headers: { apikey: key } };
   const data = await fetch(url, options).then((res) => res.json());
 
-  console.log(data);
-  return data.map((event) => {
-    return {
-      params: { slug: event.event_slug },
-      props: { event },
-    };
-  });
+  return data.map((event) => ({
+    params: { slug: event.event_slug },
+    props: { event },
+  }));
 }
 
-const { event, variant } = Astro.props;
+const { event } = Astro.props;
 ---
 
-<MainLayout title={`${event.event_title}`} backgroundClass="background_singel">
+<MainLayout title={event.event_title} backgroundClass="background_singel">
   <a href="/events">
     <ButtonRound text="Back to all events" variant="variant_3" />
   </a>
   <section class="grid_1-1">
     <div class="img_container">
-      <img src={`/img/${event.event_image}`} alt="placeholder" />
+      <img src={`/img/${event.event_image}`} alt={event.event_title} />
     </div>
     <div class="text_box">
       <p class="date">{event.event_date}</p>
       <h1>{event.event_title}</h1>
       <p>{event.event_text}</p>
       <div class="price_time">
-        <p class={` ${event.event_price ? "" : "hide"}`}>
-          Price: {event.event_price},- DKK
-        </p>
-
+        {event.event_price && <p>Price: {event.event_price},- DKK</p>}
         <p>Time: {event.event_time.slice(0, 5)}</p>
       </div>
       <ButtonRound text="Add to calendar" variant="variant_3" />
@@ -58,30 +48,32 @@ const { event, variant } = Astro.props;
     padding: 5vh;
     box-shadow: 10px 10px var(--light-green);
   }
+
   .price_time {
-    margin: 2vh 0 2vh 0;
+    margin: 2vh 0;
   }
+
   h1 {
     font-size: 2rem;
   }
-  .hide {
-    display: none;
-  }
+
   .date {
     margin-bottom: -1.5vh;
     font-size: 0.9rem;
   }
+
   img {
     height: 60vh;
     width: 100%;
     object-fit: cover;
-    align-self: stretch;
     box-shadow: 10px 10px var(--light-green);
   }
+
   .grid_1-1 {
     margin: 2vh 0 10vh 0;
     gap: 5vh;
   }
+
   @media screen and (min-width: 800px) {
     .grid_1-1 {
       display: grid;

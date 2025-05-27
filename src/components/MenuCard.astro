@@ -14,12 +14,6 @@ const { product } = Astro.props;
 </div>
 
 <style>
-  :root {
-    --card-width: 22rem;
-    --card-height: 28rem;
-    --text-width: 16rem;
-  }
-
   .card-wrapper {
     display: flex;
     justify-content: center;
@@ -68,12 +62,5 @@ const { product } = Astro.props;
     text-align: justify;
     hyphens: auto;
     word-break: break-word;
-  }
-
-  @media screen and (min-width: 800px) {
-    :root {
-      --card-width: 24rem;
-      --card-height: 30rem;
-    }
   }
 </style>

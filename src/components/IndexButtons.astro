@@ -1,7 +1,3 @@
----
-
----
-
 <section class="index-buttons">
   <div class="button-card abouts">
     <img
@@ -10,8 +6,8 @@
       alt="doodle"
     />
     <a href="/about">
-      <img class="main-img" src="/img/index_button_img4.webp" alt="About" /></a
-    >
+      <img class="main-img" src="/img/index_button_img4.webp" alt="About" />
+    </a>
     <a class="text" href="/about">ABOUT</a>
   </div>
 
@@ -22,8 +18,8 @@
       alt="doodle"
     />
     <a href="/menu">
-      <img class="main-img" src="/img/index_button_img3.webp" alt="About" /></a
-    >
+      <img class="main-img" src="/img/index_button_img3.webp" alt="Menu" />
+    </a>
     <a class="text" href="/menu">MENU</a>
   </div>
 
@@ -34,8 +30,8 @@
       alt="doodle"
     />
     <a href="/events">
-      <img class="main-img" src="/img/index_button_img1.webp" alt="Events" /></a
-    >
+      <img class="main-img" src="/img/index_button_img1.webp" alt="Events" />
+    </a>
     <a class="text" href="/events">EVENTS</a>
   </div>
 
@@ -46,8 +42,8 @@
       alt="doodle"
     />
     <a href="/collab">
-      <img class="main-img" src="/img/index_button_img2.webp" alt="Collab" /></a
-    >
+      <img class="main-img" src="/img/index_button_img2.webp" alt="Collab" />
+    </a>
     <a class="text" href="/collab">COLLAB</a>
   </div>
 </section>
@@ -58,8 +54,7 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 5vh;
+    margin: 3rem 0 5vh;
   }
 
   .button-card {
@@ -75,7 +70,6 @@
     width: 100%;
     display: block;
     transition: transform 0.3s ease;
-    /* border: 8px solid var(--plum); */
   }
 
   .doodle {
@@ -92,24 +86,28 @@
     width: 150px;
     transform: rotate(20deg);
   }
+
   .doodle-menu {
     top: 80px;
     left: 90px;
     width: 170px;
     transform: rotate(20deg);
   }
+
   .doodle-collab {
     bottom: -80px;
     right: -70px;
     width: 200px;
     transform: rotate(-10deg);
   }
+
   .doodle-about {
     top: -50px;
     left: -70px;
     width: 200px;
     --rotate: -30deg;
   }
+
   .text {
     position: absolute;
     top: 50%;
@@ -129,40 +127,33 @@
       -1px 1px 0 var(--dark-green),
       1px 1px 0 var(--dark-purple);
 
-    transition:
-      transform 0.3s ease,
-      color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
   }
 
   .text:hover {
-    transform: translate(-50%, -50%) scale(1.08); 
+    transform: translate(-50%, -50%) scale(1.08);
     color: var(--beige);
   }
+
   .button-card.collabs .main-img {
-    border-color: var(--light-green);
-    /* border: 12px solid var(--light-green); */
     border-bottom: none;
     border-left: none;
     box-shadow: 10px 10px var(--dark-purple);
   }
+
   .button-card.events .main-img {
-    border-color: var(--light-purple);
-    /* border: 15px solid var(--light-purple); */
     border-bottom: none;
     border-right: none;
     box-shadow: 10px 10px var(--light-purple);
   }
+
   .button-card.abouts .main-img {
-    border-color: var(--dark-purple);
-    /* border: 15px solid var(--plum); */
     border-top: none;
     border-left: none;
     box-shadow: 10px 10px var(--light-green);
   }
 
   .button-card.menus .main-img {
-    border-color: var(--dark-purple);
-    /* border: 15px solid var(--plum); */
     border-top: none;
     border-left: none;
     box-shadow: 10px 10px var(--dark-green);
@@ -170,15 +161,10 @@
 
   .button-card:hover .main-img {
     transform: scale(0.9);
-    transition: transform 0.3s ease;
   }
-  /* .button-card.plum {
-    margin-bottom: 100px;
-  } */
 
   @keyframes doodleFloat {
-    0%,
-    100% {
+    0%, 100% {
       transform: translateY(0) rotate(var(--rotate, 0deg));
     }
     50% {
@@ -196,4 +182,5 @@
       max-width: 300px;
       margin: 20px;
     }
+  }
 </style>

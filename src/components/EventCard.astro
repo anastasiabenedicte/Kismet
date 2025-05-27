@@ -1,5 +1,5 @@
 ---
-//@ts-nocheck
+// @ts-nocheck
 
 import ButtonRound from "./ButtonRound.astro";
 const { text, product } = Astro.props;
@@ -22,51 +22,57 @@ export async function getStaticPaths() {
 }
 ---
 
-<a
-  href={`/products/${product.event_slug}`}
-  data-filter={`${product.event_type}`}
->
+<a href={`/products/${product.event_slug}`} data-filter={product.event_type}>
   <div class="flex_box">
     <p>{product.event_date}</p>
     <ButtonRound text={product.event_type} variant="variant_4" />
   </div>
-  <img src={`/img/${product.event_image}`} alt="placeholder" />
+  <img src={`/img/${product.event_image}`} alt={product.event_title} />
   <h3>{product.event_title}</h3>
-  <p>
-    {product.event_text}
-  </p>
+  <p>{product.event_text}</p>
 
   <ButtonRound text="Read More" variant="variant_1" />
 </a>
+
 <style>
   .flex_box {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   p {
     font-size: 0.8rem;
     text-transform: none;
     line-height: 1.4rem;
+    margin: 0;
   }
+
   h3 {
     font-size: 1.5rem;
+    margin: 0.5rem 0;
   }
 
   a {
     color: var(--dark-purple);
-    gap: 2vh;
-    position: relative;
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 6;
-    border: solid 1px var(--light-purple);
-    padding: 2vh 4vh 2vh 4vh;
+    border: 1px solid var(--light-purple);
+    padding: 2vh 4vh;
     height: 100%;
     box-sizing: border-box;
     overflow: hidden;
     word-wrap: break-word;
+    gap: 2vh;
+    position: relative;
+    text-decoration: none;
   }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
   .hidden {
     display: none;
   }

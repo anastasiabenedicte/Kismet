@@ -13,7 +13,9 @@ console.log(data);
 
 <h1>DRINKS.</h1>
 
-<ul>{data.map((product) => <MenuCard {product} />)}</ul>
+<ul>
+  {data.map((product) => <MenuCard {product} />)}
+</ul>
 
 <style>
   ul {
@@ -28,9 +30,14 @@ console.log(data);
   h1 {
     text-align: center;
     color: var(--light-green);
-    font-size: 8rem;
+    font-size: 4rem;
     margin-top: 4rem;
     font-family: "Fragment Mono", monospace;
     font-style: italic;
+  }
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 8rem;
+    }
   }
 </style>

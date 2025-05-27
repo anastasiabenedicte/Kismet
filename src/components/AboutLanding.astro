@@ -10,7 +10,7 @@ import AboutGallery from "./AboutGallery.astro";
   <p class="about-text">
     Our team is full of passionate food lovers who test, experiment, and
     handpick the best seasonal ingredients — from fresh loaves to homemade
-    kefir. <br /><br />
+    kefir.<br /><br />
     Swing by for a pastry, stay for the vibe — there’s always good food, good people,
     and time for a quick chat. We can’t wait to share it all with you!
   </p>
@@ -36,7 +36,7 @@ import AboutGallery from "./AboutGallery.astro";
 
   .about-text {
     width: 90%;
-    max-width: 600px;
+    max-width: 30rem;
     padding: 0;
     text-align: left;
     hyphens: auto;
@@ -45,14 +45,15 @@ import AboutGallery from "./AboutGallery.astro";
     color: var(--dark-green);
     margin-top: 1rem;
     margin-bottom: 4rem;
-    max-width: 30rem;
   }
 
   @media screen and (min-width: 800px) {
     .about-text {
-      margin-top: 0rem;
-      margin-bottom: 6rem;
+      margin-top: -3rem;
       max-width: 40rem;
+    }
+    h1{
+       margin-bottom: 2rem;
     }
   }
 </style>

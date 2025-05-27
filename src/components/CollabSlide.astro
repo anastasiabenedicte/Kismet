@@ -39,12 +39,12 @@ const images = [
     alt="doodle"
   />
 </div>
+
 <div class="slide-buttons">
   <button id="prev-btn">←</button>
   <button id="next-btn">→</button>
 </div>
 
-<!-- jeg uploader slide.js filen herunder -->
 <script src="/scripts/collabslide.js" type="module"></script>
 
 <style>
@@ -65,7 +65,6 @@ const images = [
     display: flex;
     justify-content: center;
     align-items: center;
-    /* overflow: hidden; */
     position: relative;
   }
 
@@ -93,16 +92,17 @@ const images = [
     transform: rotate(-8deg);
     animation: doodleFloat 4s ease-in-out infinite;
   }
+
   .doodle-overlay2 {
     position: absolute;
     top: 275px;
     left: 10px;
     width: 225px;
   }
+
   .doodle-overlay3 {
     position: absolute;
     top: 290px;
-
     width: 210px;
   }
 
@@ -124,10 +124,9 @@ const images = [
 
   .slide-buttons button {
     padding: 10px 12px;
-
     background-color: var(--beige);
     border: 1px solid var(--dark-purple);
-    color: var(--dark-pruple);
+    color: var(--dark-purple);
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -141,33 +140,28 @@ const images = [
   @media (min-width: 1024px) {
     .slide-box {
       width: 230px;
-
-      /* border: 13px solid var(--light-green); */
       box-shadow: 10px 10px var(--light-purple);
-      /* box-shadow: 0 25px 50px var(--plum); */
-      margin: 0px auto 20px auto;
+      margin: 0 auto 20px auto;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
-
       margin-right: 68px;
     }
+
     .slide-buttons {
-      display: flex;
-      justify-content: center;
       gap: 5rem;
       margin-right: 100px;
     }
+
     .doodle-overlay {
-      position: absolute;
       top: -90px;
       right: 20px;
       width: 190px;
     }
+
     .slide-wrapper {
-      position: relative;
-      width: 100%; /* ikke fit-content! */
+      width: 100%;
     }
   }
 </style>

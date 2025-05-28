@@ -10,6 +10,11 @@ img {
   height: auto;
 }
 
+html{
+  font-size: 16px;
+
+}
+
 :root {
   --white: #f0ebd5;
   --black: #2c2c2c;
@@ -19,7 +24,9 @@ img {
   --light-green: #8c9d60;
   --dark-green: #3d4b19;
   --plum: #4d0e28;
+  
 }
+
 
 body {
   background-color: var(--beige);
@@ -80,7 +87,7 @@ a {
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 4.4rem;
   }
 
   h2 {

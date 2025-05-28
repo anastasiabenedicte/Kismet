@@ -9,28 +9,70 @@
       it means there’s always something new to taste when you stop by.
     </p>
   </div>
-
-  <div class="scroll-gallery">
-    <div class="scroll-track">
-      <img src="/img/food-1.webp" alt="food 1" />
-      <img src="/img/food-2.webp" alt="food 2" />
-      <img src="/img/food-3.webp" alt="food 3" />
-      <img src="/img/food-4.webp" alt="food 4" />
-      <img src="/img/food-5.webp" alt="food 5" />
-      <img src="/img/food-6.webp" alt="food 6" />
-      <img src="/img/food-7.webp" alt="food 7" />
-      <img src="/img/food-8.webp" alt="food 8" />
-      <img src="/img/food-9.webp" alt="food 9" />
-      <img src="/img/food-10.webp" alt="food 10" />
-      <img src="/img/food-11.webp" alt="food 11" />
-      <img src="/img/food-12.webp" alt="food 12" />
-      <img src="/img/food-3.webp" alt="food 13" />
-      <img src="/img/food-14.webp" alt="food 14" />
+  <div class="scroll-wrapper">
+    <img class="doodle doodle-menu" src="/img/menu_doodle1.webp" alt="doodle" />
+    <div class="scroll-gallery">
+      <div class="scroll-track">
+        <img src="/img/food-1.webp" alt="food 1" />
+        <img src="/img/food-2.webp" alt="food 2" />
+        <img src="/img/food-3.webp" alt="food 3" />
+        <img src="/img/food-4.webp" alt="food 4" />
+        <img src="/img/food-5.webp" alt="food 5" />
+        <img src="/img/food-6.webp" alt="food 6" />
+        <img src="/img/food-7.webp" alt="food 7" />
+        <img src="/img/food-8.webp" alt="food 8" />
+        <img src="/img/food-9.webp" alt="food 9" />
+        <img src="/img/food-10.webp" alt="food 10" />
+        <img src="/img/food-11.webp" alt="food 11" />
+        <img src="/img/food-12.webp" alt="food 12" />
+        <img src="/img/food-3.webp" alt="food 13" />
+        <img src="/img/food-14.webp" alt="food 14" />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  /* Ny wrapper */
+  .scroll-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Scrollen som før */
+  .scroll-gallery {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Doodle ovenpå scrollen men stadig responsiv */
+  .doodle-menu {
+    position: absolute;
+    bottom: 200px;
+    right: 930px;
+    width: 150px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Animation */
+  @keyframes doodleMenu {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+
   .menu-section {
     position: relative;
     padding: 0rem 1rem;
@@ -61,6 +103,7 @@
     width: 80vw;
     max-width: 90vw;
     margin: 0 auto;
+    position: relative;
   }
 
   .scroll-track {
@@ -87,16 +130,20 @@
   }
 
   @media screen and (min-width: 800px) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
     .menu-section {
-      padding: 6rem 1rem;
+      /* padding: 6rem 1rem; */
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .menu-text-wrapper {
       max-width: 500px;
-      padding: 1.5rem 3rem;
-      margin-bottom: 5rem;
+      /* padding: 1.5rem 3rem; */
+      margin-bottom: 4rem;
     }
 
     p {

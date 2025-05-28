@@ -30,6 +30,7 @@ import AboutGallery from "./AboutGallery.astro";
     top: 105%;
     left: 4%;
     animation: doodleAbout 8s linear infinite;
+    z-index: 10;
   }
   .about-doodle2 {
     width: 19%;
@@ -37,6 +38,7 @@ import AboutGallery from "./AboutGallery.astro";
     top: 190%;
     left: 1%;
     animation: doodleAbout 11s linear infinite;
+    z-index: 10;
   }
 
   .about-doodle3 {
@@ -45,6 +47,7 @@ import AboutGallery from "./AboutGallery.astro";
     top: 145%;
     left: 80%;
     animation: doodleAbout 15s linear infinite;
+    z-index: 10;
   }
   @keyframes doodleAbout {
     0% {
@@ -56,9 +59,6 @@ import AboutGallery from "./AboutGallery.astro";
     }
   }
 
-  AboutGallery {
-    position: relative;
-  }
   .container {
     display: flex;
     flex-direction: column;
@@ -88,12 +88,36 @@ import AboutGallery from "./AboutGallery.astro";
   }
 
   @media screen and (min-width: 800px) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
     .about-text {
       margin-top: -3rem;
       max-width: 40rem;
     }
     h1 {
       margin-bottom: 2rem;
+    }
+
+    .about-doodle1 {
+      width: 10%;
+
+      top: 165%;
+      left: 19%;
+    }
+    .about-doodle2 {
+      width: 10%;
+
+      top: 240%;
+      left: 35%;
+    }
+
+    .about-doodle3 {
+      width: 9%;
+
+      top: 200%;
+      left: 75%;
     }
   }
 </style>

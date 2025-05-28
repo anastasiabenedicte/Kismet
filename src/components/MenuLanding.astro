@@ -38,7 +38,6 @@
 </section>
 
 <style>
-  /* Ny wrapper */
   .scroll-wrapper {
     position: relative;
     width: 100%;
@@ -46,35 +45,58 @@
     margin: 0 auto;
   }
 
-  /* Scrollen som før */
   .scroll-gallery {
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
     position: relative;
+    background-color: var(--beige);
+    padding: 10px;
+    box-shadow: 8px 8px var(--dark-green);
   }
 
-  /* Doodle ovenpå scrollen men stadig responsiv */
+  /* .doodle-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 240px;
+    width: 90px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  } */
+
   .doodle-menu {
     position: absolute;
-    bottom: 200px;
-    right: 930px;
-    width: 150px;
-    z-index: 10;
-    animation: doodleMenu 3.5s ease-in-out infinite;
-    pointer-events: none;
-  }
-  .doodle-menu1 {
-    position: absolute;
-    top: 170px;
-    left: 930px;
-    width: 150px;
+    bottom: 62.6%;
+    right: 87%;
+    width: 24%;
+    max-width: 90px;
     z-index: 10;
     animation: doodleMenu 3.5s ease-in-out infinite;
     pointer-events: none;
   }
 
-  /* Animation */
+  /* .doodle-menu1 {
+    position: absolute;
+    top: 110px;
+    left: 260px;
+    width: 80px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  } */
+
+  .doodle-menu1 {
+    position: absolute;
+    top: 82.5%;
+    left: 92%;
+    width: 21.3%;
+    max-width: 80px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
   @keyframes doodleMenu {
     0% {
       transform: rotate(-5deg);
@@ -101,7 +123,7 @@
 
   .menu-text-wrapper {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     max-width: 80vw;
     margin: 0 auto 2rem auto;
     text-align: left;
@@ -148,6 +170,39 @@
     body {
       overflow-x: hidden;
     }
+
+    /* .doodle-menu {
+      position: absolute;
+      bottom: 200px;
+      right: 930px;
+      width: 150px;
+      z-index: 10;
+      animation: doodleMenu 3.5s ease-in-out infinite;
+      pointer-events: none;
+    } */
+    .doodle-menu {
+      bottom: 70%;
+      right: 91.6%;
+      width: 100%;
+      max-width: 150px;
+    }
+    /* 
+    .doodle-menu1 {
+      position: absolute;
+      top: 190px;
+      left: 950px;
+      width: 150px;
+      z-index: 10;
+      animation: doodleMenu 3.5s ease-in-out infinite;
+      pointer-events: none;
+    } */
+    .doodle-menu1 {
+      top: 70%;
+      left: 94%;
+      width: 100%;
+      max-width: 170px;
+    }
+
     .menu-section {
       /* padding: 6rem 1rem; */
       max-width: 1200px;
@@ -167,6 +222,7 @@
     .scroll-gallery {
       width: 100%;
       max-width: 1200px;
+      box-shadow: 10px 10px var(--dark-green);
     }
 
     .scroll-track {

@@ -5,11 +5,7 @@ const filters = ["all", "run-club", "dj", "dinner", "workshop"];
 console.log(filters);
 ---
 
-<div
-  class={` ${variant} ${size} ${data} `}
-  id={`${filter}`}
-  data-filter={`${data}`}
->
+<div class={` ${filter} ${variant} ${size} ${data} `} data-filter={`${data}`}>
   {text}
 </div>
 

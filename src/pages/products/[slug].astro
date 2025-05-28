@@ -21,7 +21,7 @@ const { event } = Astro.props;
 ---
 
 <MainLayout title={event.event_title} backgroundClass="background_singel">
-  <a href="/events">
+  <a href="/events" class="button">
     <ButtonRound text="Back to all events" variant="variant_3" />
   </a>
   <section class="grid_1-1">
@@ -52,7 +52,9 @@ const { event } = Astro.props;
   .price_time {
     margin: 2vh 0;
   }
-
+  .button {
+    display: flex;
+  }
   h1 {
     font-size: 2rem;
   }

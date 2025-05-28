@@ -15,48 +15,14 @@ import AboutGallery from "./AboutGallery.astro";
     and time for a quick chat. We can’t wait to share it all with you!
   </p>
   <h1>OUR STAFF</h1>
-  <div class="img-wrapper">
-    <img class="about-doodle1" src="/img/menu_doodle.webp" alt="doodlemenu" />
-    <img class="about-doodle2" src="/img/menu_doodle.webp" alt="doodlemenu" />
-    <img class="about-doodle3" src="/img/menu_doodle.webp" alt="doodlemenu" />
-    <AboutGallery />
-  </div>
+
+  <AboutGallery />
 </section>
 
 <style>
-  .about-doodle1 {
-    width: 18%;
-    position: absolute;
-    top: 105%;
-    left: 4%;
-    animation: doodleAbout 8s linear infinite;
-    z-index: 10;
-  }
-  .about-doodle2 {
-    width: 19%;
-    position: absolute;
-    top: 190%;
-    left: 1%;
-    animation: doodleAbout 11s linear infinite;
-    z-index: 10;
-  }
-
-  .about-doodle3 {
-    width: 18%;
-    position: absolute;
-    top: 145%;
-    left: 80%;
-    animation: doodleAbout 15s linear infinite;
-    z-index: 10;
-  }
-  @keyframes doodleAbout {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
+  html,
+  body {
+    overflow-x: hidden;
   }
 
   .container {
@@ -67,6 +33,7 @@ import AboutGallery from "./AboutGallery.astro";
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 5vh;
   }
 
   h1 {
@@ -88,10 +55,6 @@ import AboutGallery from "./AboutGallery.astro";
   }
 
   @media screen and (min-width: 800px) {
-    html,
-    body {
-      overflow-x: hidden;
-    }
     .about-text {
       margin-top: -3rem;
       max-width: 40rem;
@@ -100,7 +63,7 @@ import AboutGallery from "./AboutGallery.astro";
       margin-bottom: 2rem;
     }
 
-    .about-doodle1 {
+    /* .about-doodle1 {
       width: 10%;
 
       top: 165%;
@@ -118,6 +81,6 @@ import AboutGallery from "./AboutGallery.astro";
 
       top: 200%;
       left: 75%;
-    }
+    } */
   }
 </style>

@@ -167,9 +167,10 @@ let currentIndex = 0;
     background-color: var(--beige);
     border: 1px solid var(--dark-purple);
     color: var(--dark-purple);
-    border-radius: 50%;
+    border-radius: 20%;
     cursor: pointer;
     width: 36px;
+
     height: 36px;
     font-size: 1.2rem;
     display: flex;
@@ -178,6 +179,11 @@ let currentIndex = 0;
     transition: background-color 0.2s ease;
     user-select: none;
     z-index: 10;
+  }
+
+  .slide-btn:hover {
+    background-color: var(--dark-purple);
+    color: var(--beige);
   }
 
   .arrow {
@@ -208,11 +214,11 @@ let currentIndex = 0;
   }
 
   .prev-btn {
-    left: 2rem;
+    left: 1rem;
   }
 
   .next-btn {
-    right: 2rem;
+    right: 1rem;
   }
 
   @media (min-width: 800px) {
@@ -229,12 +235,12 @@ let currentIndex = 0;
 
     .prev-btn {
       left: 3.5rem;
-       margin-top: -2rem;
+      margin-top: -2rem;
     }
 
     .next-btn {
       right: 3.5rem;
-       margin-top: -2rem;
+      margin-top: -2rem;
     }
 
     .slide-box {

@@ -2,35 +2,24 @@
 const { product } = Astro.props;
 ---
 
-<div class="card-wrapper">
-  <article>
-    <h1>{product.menu_title}</h1>
-    <p class="price">{product.price} DKK</p>
-    <img src={`/img/${product.image}`} alt="placeholder" />
-    <div class="text-container">
-      <p>{product.menu_text}</p>
-    </div>
-  </article>
-</div>
+<article>
+  <h1>{product.menu_title}</h1>
+  <p class="price">{product.price} DKK</p>
+  <img src={`/img/${product.image}`} alt="placeholder" />
+  <div class="text-container">
+    <p>{product.menu_text}</p>
+  </div>
+</article>
 
 <style>
-  .card-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-  }
-
   article {
     background-color: var(--light-purple);
     color: var(--beige);
     box-shadow: 10px 10px var(--dark-purple);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 4vh;
-    width: var(--card-width);
-    height: var(--card-height);
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    padding: 40px;
     box-sizing: border-box;
     text-align: center;
   }
@@ -45,11 +34,12 @@ const { product } = Astro.props;
   }
 
   .price {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 
   img {
     width: 50%;
+    margin: 0 auto;
   }
 
   .text-container {
@@ -58,9 +48,8 @@ const { product } = Astro.props;
 
   .text-container p {
     line-height: 1.5;
-    margin: 0 auto;
-    text-align: justify;
     hyphens: auto;
     word-break: break-word;
+    text-align: start;
   }
 </style>

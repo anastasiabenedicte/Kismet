@@ -11,6 +11,11 @@
   </div>
   <div class="scroll-wrapper">
     <img class="doodle doodle-menu" src="/img/menu_doodle1.webp" alt="doodle" />
+    <img
+      class="doodle doodle-menu1"
+      src="/img/menu_doodle1.webp"
+      alt="doodle"
+    />
     <div class="scroll-gallery">
       <div class="scroll-track">
         <img src="/img/food-1.webp" alt="food 1" />
@@ -54,6 +59,15 @@
     position: absolute;
     bottom: 200px;
     right: 930px;
+    width: 150px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .doodle-menu1 {
+    position: absolute;
+    top: 170px;
+    left: 930px;
     width: 150px;
     z-index: 10;
     animation: doodleMenu 3.5s ease-in-out infinite;

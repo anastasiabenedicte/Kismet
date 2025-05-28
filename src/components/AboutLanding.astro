@@ -15,10 +15,37 @@ import AboutGallery from "./AboutGallery.astro";
     and time for a quick chat. We can’t wait to share it all with you!
   </p>
   <h1>OUR STAFF</h1>
-  <AboutGallery />
+  <div class="img-wrapper">
+    <img class="about-doodle1" src="/img/menu_doodle.webp" alt="doodlemenu" />,
+    <img class="about-doodle2" src="/img/menu_doodle.webp" alt="doodlemenu" />,
+    <img class="about-doodle3" src="/img/menu_doodle.webp" alt="doodlemenu" />
+    <AboutGallery />
+  </div>
 </section>
 
 <style>
+  .about-doodle1 {
+    width: 20%;
+    position: absolute;
+    top: 105%;
+    left: 4%;
+  }
+  .about-doodle2 {
+    width: 20%;
+    position: absolute;
+    top: 190%;
+    left: 1%;
+  }
+
+  .about-doodle3 {
+    width: 20%;
+    position: absolute;
+    top: 145%;
+    left: 80%;
+  }
+  AboutGallery {
+    position: relative;
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -52,8 +79,8 @@ import AboutGallery from "./AboutGallery.astro";
       margin-top: -3rem;
       max-width: 40rem;
     }
-    h1{
-       margin-bottom: 2rem;
+    h1 {
+      margin-bottom: 2rem;
     }
   }
 </style>

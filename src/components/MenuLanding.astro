@@ -9,28 +9,106 @@
       it means there’s always something new to taste when you stop by.
     </p>
   </div>
-
-  <div class="scroll-gallery">
-    <div class="scroll-track">
-      <img src="/img/food-1.webp" alt="food 1" />
-      <img src="/img/food-2.webp" alt="food 2" />
-      <img src="/img/food-3.webp" alt="food 3" />
-      <img src="/img/food-4.webp" alt="food 4" />
-      <img src="/img/food-5.webp" alt="food 5" />
-      <img src="/img/food-6.webp" alt="food 6" />
-      <img src="/img/food-7.webp" alt="food 7" />
-      <img src="/img/food-8.webp" alt="food 8" />
-      <img src="/img/food-9.webp" alt="food 9" />
-      <img src="/img/food-10.webp" alt="food 10" />
-      <img src="/img/food-11.webp" alt="food 11" />
-      <img src="/img/food-12.webp" alt="food 12" />
-      <img src="/img/food-3.webp" alt="food 13" />
-      <img src="/img/food-14.webp" alt="food 14" />
+  <div class="scroll-wrapper">
+    <img class="doodle doodle-menu" src="/img/menu_doodle1.webp" alt="doodle" />
+    <img
+      class="doodle doodle-menu1"
+      src="/img/menu_doodle1.webp"
+      alt="doodle"
+    />
+    <div class="scroll-gallery">
+      <div class="scroll-track">
+        <img src="/img/food-1.webp" alt="food 1" />
+        <img src="/img/food-2.webp" alt="food 2" />
+        <img src="/img/food-3.webp" alt="food 3" />
+        <img src="/img/food-4.webp" alt="food 4" />
+        <img src="/img/food-5.webp" alt="food 5" />
+        <img src="/img/food-6.webp" alt="food 6" />
+        <img src="/img/food-7.webp" alt="food 7" />
+        <img src="/img/food-8.webp" alt="food 8" />
+        <img src="/img/food-9.webp" alt="food 9" />
+        <img src="/img/food-10.webp" alt="food 10" />
+        <img src="/img/food-11.webp" alt="food 11" />
+        <img src="/img/food-12.webp" alt="food 12" />
+        <img src="/img/food-3.webp" alt="food 13" />
+        <img src="/img/food-14.webp" alt="food 14" />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .scroll-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .scroll-gallery {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--beige);
+    padding: 10px;
+    box-shadow: 8px 8px var(--dark-green);
+  }
+
+  /* .doodle-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 240px;
+    width: 90px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  } */
+
+  .doodle-menu {
+    position: absolute;
+    bottom: 62.6%;
+    right: 87%;
+    width: 24%;
+    max-width: 90px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* .doodle-menu1 {
+    position: absolute;
+    top: 110px;
+    left: 260px;
+    width: 80px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  } */
+
+  .doodle-menu1 {
+    position: absolute;
+    top: 82.5%;
+    left: 92%;
+    width: 21.3%;
+    max-width: 80px;
+    z-index: 10;
+    animation: doodleMenu 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes doodleMenu {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+
   .menu-section {
     position: relative;
     padding: 0rem 1rem;
@@ -45,7 +123,7 @@
 
   .menu-text-wrapper {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     max-width: 80vw;
     margin: 0 auto 2rem auto;
     text-align: left;
@@ -61,6 +139,7 @@
     width: 80vw;
     max-width: 90vw;
     margin: 0 auto;
+    position: relative;
   }
 
   .scroll-track {
@@ -87,16 +166,53 @@
   }
 
   @media screen and (min-width: 800px) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    /* .doodle-menu {
+      position: absolute;
+      bottom: 200px;
+      right: 930px;
+      width: 150px;
+      z-index: 10;
+      animation: doodleMenu 3.5s ease-in-out infinite;
+      pointer-events: none;
+    } */
+    .doodle-menu {
+      bottom: 70%;
+      right: 91.6%;
+      width: 100%;
+      max-width: 150px;
+    }
+    /* 
+    .doodle-menu1 {
+      position: absolute;
+      top: 190px;
+      left: 950px;
+      width: 150px;
+      z-index: 10;
+      animation: doodleMenu 3.5s ease-in-out infinite;
+      pointer-events: none;
+    } */
+    .doodle-menu1 {
+      top: 70%;
+      left: 94%;
+      width: 100%;
+      max-width: 170px;
+    }
+
     .menu-section {
-      padding: 6rem 1rem;
+      /* padding: 6rem 1rem; */
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .menu-text-wrapper {
       max-width: 500px;
-      padding: 1.5rem 3rem;
-      margin-bottom: 5rem;
+      /* padding: 1.5rem 3rem; */
+      margin-bottom: 4rem;
     }
 
     p {
@@ -106,6 +222,7 @@
     .scroll-gallery {
       width: 100%;
       max-width: 1200px;
+      box-shadow: 10px 10px var(--dark-green);
     }
 
     .scroll-track {

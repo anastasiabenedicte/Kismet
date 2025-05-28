@@ -6,15 +6,50 @@ const images = Array.from({ length: 9 }, (_, i) => ({
 ---
 
 <style>
+  .doodle {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+    animation: doodleAbout 15s linear infinite;
+  }
+
+  .about-doodle1 {
+    top: 0%;
+    left: -10px;
+    width: 100px;
+  }
+
+  .about-doodle2 {
+    top: 45%;
+    right: -20px;
+    width: 100px;
+  }
+
+  .about-doodle3 {
+    top: 88%;
+    right: 285px;
+    width: 100px;
+  }
+
+  @keyframes doodleAbout {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   .gallery {
     display: grid;
+    position: relative;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 1rem;
     margin-top: 0;
   }
 
-  .gallery img {
+  .gallery img:not(.doodle) {
     width: 100%;
     height: 12rem;
     object-fit: cover;
@@ -45,6 +80,22 @@ const images = Array.from({ length: 9 }, (_, i) => ({
       <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
     ))
   }
+
+  <img
+    class="doodle about-doodle1"
+    src="/img/menu_doodle.webp"
+    alt="doodlemenu"
+  />
+  <img
+    class="doodle about-doodle2"
+    src="/img/menu_doodle.webp"
+    alt="doodlemenu"
+  />
+  <img
+    class="doodle about-doodle3"
+    src="/img/menu_doodle.webp"
+    alt="doodlemenu"
+  />
 </div>
 
 <script is:inline>

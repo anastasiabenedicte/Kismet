@@ -10,9 +10,8 @@ img {
   height: auto;
 }
 
-html{
+html {
   font-size: 16px;
-
 }
 
 :root {
@@ -24,9 +23,7 @@ html{
   --light-green: #8c9d60;
   --dark-green: #3d4b19;
   --plum: #4d0e28;
-  
 }
-
 
 body {
   background-color: var(--beige);
@@ -51,7 +48,9 @@ body {
 }
 
 h1 {
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: "roca", sans-serif;
+  font-weight: 800;
+  font-style: normal;
   font-size: 3rem;
 }
 
@@ -73,6 +72,8 @@ h3 {
 p {
   font-size: 0.8rem;
   line-height: 1.8rem;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a {

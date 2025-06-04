@@ -5,7 +5,7 @@ import CollabSlide from "./CollabSlide.astro";
 
 <section class="collabs-section">
   <div class="collab-text-side">
-    <h1>COLLAB</h1>
+    <h1>Collab</h1>
     <h2>Interested in doing a collab with us?</h2>
   </div>
 
@@ -55,7 +55,16 @@ import CollabSlide from "./CollabSlide.astro";
     background-color: var(--light-purple);
   }
 
-  h1,
+  h1 {
+    color: rgb(255, 255, 221);
+    text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+    text-align: center;
+  }
+
   h2 {
     color: var(--dark-purple);
     text-align: center;

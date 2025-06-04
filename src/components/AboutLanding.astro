@@ -5,7 +5,7 @@ import AboutGallery from "./AboutGallery.astro";
 ---
 
 <section class="container">
-  <h1>ABOUT</h1>
+  <h1>About</h1>
   <AboutSlide />
   <p class="about-text">
     Our team is full of passionate food lovers who test, experiment, and
@@ -37,8 +37,13 @@ import AboutGallery from "./AboutGallery.astro";
   }
 
   h1 {
-    color: var(--light-green);
     margin-bottom: -1rem;
+    color: rgb(255, 255, 221);
+    text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
   }
 
   .about-text {

@@ -47,6 +47,8 @@ import Footer from "../components/Footer.astro";
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="https://use.typekit.net/jtp4kdc.css" />
+
     <title>{title}</title>
   </head>
   <body class={backgroundClass}>
@@ -89,26 +91,26 @@ import Footer from "../components/Footer.astro";
   }
 
   body.menu-page::before {
-    background-image: url("/img/about-1.webp");
+    background-image: url("/img/about-background.webp");
     background-size: 400px 500px;
-    opacity: 0.1;
+    opacity: 0.2;
   }
 
   body.collab-page::before {
-    background-image: url("/img/collab_bg.webp");
-    background-size: 255px 330px;
-    opacity: 0.24;
+    background-image: url("/img/about-background.webp");
+    background-size: 400px 500px;
+    opacity: 0.2;
   }
 
   body.index-page::before {
-    background-image: url("/img/index_bg.webp");
-    background-size: 650px 700px;
-    opacity: 0.25;
+    background-image: url("/img/about-background.webp");
+    background-size: 400px 500px;
+    opacity: 0.2;
   }
 
   body.events-page::before {
-    background-image: url("/img/collab-4.webp");
+    background-image: url("/img/about-background.webp");
     background-size: 400px 500px;
-    opacity: 0.1;
+    opacity: 0.2;
   }
 </style>

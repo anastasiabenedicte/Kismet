@@ -1,3 +1,10 @@
+Videreudvikling af digital løsning for KISMET – v. Anastasia
+
+Dette projekt er en selvstændig videreudvikling af en digital løsning udarbejdet i samarbejde med Gruppe 10. Fokus i denne fase ligger på at optimere og udvide design og funktionalitet med udgangspunkt i den eksisterende kodebase og struktur, udviklet i forbindelse med vores eksamensprojekt.
+
+Da projektet nu videreudvikles af én person, vil visse strukturer og retningslinjer være forenklede, men stadig bygge videre på de principper og løsninger, der blev aftalt i det oprindelige fælles arbejde.
+
+
 # Teknisk dokumentation for Kismet gruppe 10 eksamen
 
 Når man er flere der bidrager til en kodebase, lærer man hurtigt, at ens sædvanlige måder at gøre tingene på ikke nødvendigvis er logisk for alle.

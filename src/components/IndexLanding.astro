@@ -25,11 +25,6 @@
   <div class="wrap-img-h3">
     <div class="index-img">
       <img src="/img/index_landing.webp" alt="Kismet" />
-      <img
-        class="doodle_bottle"
-        src="/img/index_wine_bottle.webp"
-        alt="doodle_bottle"
-      />
     </div>
 
     <h2 class="no-res">
@@ -66,6 +61,7 @@
       -1px 1px 0 black,
       1px 1px 0 black;
     margin-bottom: 70px;
+    text-align: center;
   }
 
   .index-img {
@@ -81,7 +77,9 @@
   }
 
   .no-res {
-    font-family: "Gloria Hallelujah", cursive;
+    font-family: "roca", sans-serif;
+    font-weight: 800;
+    font-style: normal;
     color: var(--dark-green);
     font-size: 15px;
     margin-top: 30px;
@@ -102,16 +100,6 @@
     align-items: center;
     gap: 1rem;
     margin-top: 2rem;
-  }
-
-  .doodle_bottle {
-    width: 100px;
-    position: absolute;
-    top: 5px;
-    left: 16%;
-    animation: bottleFloat 3.5s ease-in-out infinite;
-    transform-origin: bottom center;
-    display: inline-block;
   }
 
   @keyframes bottleFloat {
@@ -149,9 +137,6 @@
     }
     hr {
       width: 70rem;
-    }
-    h1 {
-      text-align: start;
     }
     .index-img {
       width: 360px;

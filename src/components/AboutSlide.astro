@@ -125,10 +125,7 @@ let currentIndex = 0;
     max-width: 600px;
     height: auto;
     object-fit: cover;
-    transition:
-      opacity 0.3s ease-in-out,
-      box-shadow 0.3s ease-in-out;
-    box-shadow: 4px 4px var(--light-green);
+    transition:;
   }
 
   .caption-wrapper {
@@ -140,7 +137,7 @@ let currentIndex = 0;
     align-items: center;
     z-index: 5;
     transition: opacity 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--beige);
     padding: 0.5rem 0.25rem;
     opacity: 0;
     pointer-events: none;
@@ -182,8 +179,9 @@ let currentIndex = 0;
   }
 
   .slide-btn:hover {
-    background-color: var(--dark-purple);
+    background-color: var(--light-purple);
     color: var(--beige);
+    border: 1px solid var(--beige);
   }
 
   .arrow {
@@ -198,8 +196,8 @@ let currentIndex = 0;
     transform: translateY(-50%);
     position: absolute;
     background-color: var(--beige);
-    border: 1px solid var(--dark-purple);
-    color: var(--dark-purple);
+    border: 1px solid var(--dark-green);
+    color: var(--dark-green);
     border-radius: 50%;
     cursor: pointer;
     width: 30px;
@@ -261,7 +259,6 @@ let currentIndex = 0;
     .img-wrap img {
       height: 100%;
       width: auto;
-      box-shadow: 10px 10px var(--light-green);
     }
 
     .caption-wrapper {

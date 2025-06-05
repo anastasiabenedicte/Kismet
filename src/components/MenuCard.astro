@@ -6,22 +6,20 @@ const { product } = Astro.props;
   <h1>{product.menu_title}</h1>
   <p class="price">{product.price} DKK</p>
   <img src={`/img/${product.image}`} alt="placeholder" />
-  <div class="text-container">
-    <p>{product.menu_text}</p>
-  </div>
 </article>
 
 <style>
   article {
-    background-color: var(--light-purple);
-    color: var(--beige);
-    box-shadow: 10px 10px var(--dark-purple);
+    background-color: var(--dark-green);
+    color: rgb(253, 247, 222);
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 4;
-    padding: 40px;
     box-sizing: border-box;
     text-align: center;
+    border-radius: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   h1,
@@ -39,17 +37,7 @@ const { product } = Astro.props;
 
   img {
     width: 50%;
+    height: 100%;
     margin: 0 auto;
-  }
-
-  .text-container {
-    width: var(--text-width);
-  }
-
-  .text-container p {
-    line-height: 1.5;
-    hyphens: auto;
-    word-break: break-word;
-    text-align: start;
   }
 </style>

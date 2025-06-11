@@ -1,67 +1,29 @@
 <section class="Index-section">
-  <video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-    src="/videos/hero.mp4"
-    aria-hidden="true"></video>
   <div class="index-text-side">
-    <h1>KISMET</h1>
+    <h1>Café & Bakery</h1>
   </div>
 
   <div class="index-flexbox">
     <div class="index-wrapper">
       <p class="index-text">
-        We are located in central copenhagen. A place that brings people
-        together through a shared love for food, connection, good vibes, and
-        inspiring events.
+        A place located in the center of Copenhagen, that brings people together through a shared love for food,
+        connection, good vibes, and inspiring events.
       </p>
     </div>
-  </div>
-
-  <div class="wrap-img-h3">
-    <div class="index-img">
-      <img src="/img/index_landing.webp" alt="Kismet" />
-    </div>
-
-    <h2 class="no-res">
-      come by and grab a seat, we don't make reservations:)
-    </h2>
   </div>
 </section>
 
 <hr />
 
 <style>
-  .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    pointer-events: none;
-  }
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
-    padding-top: 45vh;
   }
 
   h1 {
-    color: rgb(255, 255, 221);
-    text-shadow:
-      -1px -1px 0 black,
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
     margin-bottom: 70px;
-    text-align: center;
   }
 
   .index-img {
@@ -77,9 +39,7 @@
   }
 
   .no-res {
-    font-family: "roca", sans-serif;
-    font-weight: 800;
-    font-style: normal;
+    font-family: "Gloria Hallelujah", cursive;
     color: var(--dark-green);
     font-size: 15px;
     margin-top: 30px;
@@ -92,26 +52,6 @@
     background-color: var(--beige);
     border: none;
     margin: 2rem auto;
-  }
-
-  .wrap-img-h3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  @keyframes bottleFloat {
-    0% {
-      transform: rotate(-5deg);
-    }
-    50% {
-      transform: rotate(5deg);
-    }
-    100% {
-      transform: rotate(-5deg);
-    }
   }
 
   @media (min-width: 350px) {
@@ -138,6 +78,9 @@
     hr {
       width: 70rem;
     }
+    h1 {
+      text-align: center;
+    }
     .index-img {
       width: 360px;
       order: 2;
@@ -152,19 +95,13 @@
       gap: 3rem;
     }
     .index-text {
-      padding-left: 25px;
-      margin-left: 10px;
-      position: relative;
-      bottom: 10px;
+      align-items: center;
     }
     .no-res {
       font-size: 20px;
       margin-top: 4.8rem;
       order: 1;
       width: 600px;
-    }
-    .doodle_bottle {
-      width: 120px;
     }
   }
 </style>

@@ -15,14 +15,11 @@ html {
 }
 
 :root {
-  --white: #f0ebd5;
+  --white: #f9f8f0;
   --black: #2c2c2c;
-  --beige: #f0ebd5;
+  --beige: #f3eeda;
   --light-purple: #b5addf;
-  --dark-purple: #4a426b;
-  --light-green: #8c9d60;
-  --dark-green: #3d4b19;
-  --plum: #4d0e28;
+  --dark-green: #2d3c08;
 }
 
 body {
@@ -48,10 +45,9 @@ body {
 }
 
 h1 {
-  font-family: "roca", sans-serif;
-  font-weight: 800;
-  font-style: normal;
+  font-family: "Gloria Hallelujah", cursive;
   font-size: 3rem;
+  color: var(--light-purple);
 }
 
 p,
@@ -61,14 +57,14 @@ a {
 
 h2 {
   font-size: 1.2rem;
-  font-family: "roca", sans-serif;
+  font-family: "Gloria Hallelujah", cursive;
   font-weight: 800;
   font-style: normal;
 }
 
 h3 {
   font-size: 1rem;
-  font-family: "roca", sans-serif;
+  font-family: "Gloria Hallelujah", cursive;
   font-weight: 800;
   font-style: normal;
 }

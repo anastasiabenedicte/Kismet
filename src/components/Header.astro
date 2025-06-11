@@ -77,7 +77,7 @@
 
   .logo {
     height: auto;
-    width: 6vh;
+    width: 12vh;
   }
 
   .logo:hover {
@@ -87,7 +87,7 @@
   .navbar {
     top: 0;
     z-index: 1000;
-    background-color: rgb(253, 247, 222);
+    background-color: #f3eeda;
     transition: background-color 0.1s ease;
     position: fixed;
     left: 0;
@@ -97,13 +97,13 @@
   }
 
   .navbar.scrolled {
-    background-color: rgb(253, 247, 222);
+    background-color: #f3eeda;
   }
 
   .navbar.active,
   #navbar.active {
     background-color: var(--dark-green);
-    box-shadow: none; /* Fjern skygge */
+    box-shadow: none;
   }
 
   #navbar.active .logo {
@@ -117,10 +117,10 @@
 
   a {
     color: var(--dark-green);
-    font-family: "roca", sans-serif;
-    font-weight: 800;
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 1200;
     font-style: normal;
-    text-transform: none;
+    text-transform: uppercase;
   }
 
   a:hover {
@@ -192,7 +192,7 @@
 
   @media screen and (min-width: 1080px) {
     .logo {
-      width: 8vh;
+      width: 15vh;
     }
 
     .menu_list .logo {

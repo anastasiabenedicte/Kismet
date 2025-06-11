@@ -114,47 +114,43 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2.3rem;
-    color: white;
+
     z-index: 6;
     text-decoration: none;
     pointer-events: auto;
     text-align: center;
-    font-family: "roca", sans-serif;
-    font-weight: 800;
-    font-style: normal;
+    font-family:
+      Gloria Hallelujah,
+      cursive;
+    color: beige;
 
     text-shadow:
       -1px -1px 0 var(--dark-green),
-      1px -1px 0 var(--dark-purple),
+      1px -1px 0 var(--dark-green),
       -1px 1px 0 var(--dark-green),
-      1px 1px 0 var(--dark-purple);
+      1px 1px 0 var(--dark-green);
 
     transition:
       transform 0.3s ease,
       color 0.3s ease;
   }
 
-  .text:hover {
-    transform: translate(-50%, -50%) scale(1.08);
-    color: var(--beige);
-  }
-
   .button-card.collabs .main-img {
     border-bottom: none;
     border-left: none;
-    box-shadow: 10px 10px var(--dark-purple);
+    box-shadow: 10px 10px var(--dark-green);
   }
 
   .button-card.events .main-img {
     border-bottom: none;
     border-right: none;
-    box-shadow: 10px 10px var(--light-purple);
+    box-shadow: 10px 10px var(--dark-green);
   }
 
   .button-card.abouts .main-img {
     border-top: none;
     border-left: none;
-    box-shadow: 10px 10px var(--light-green);
+    box-shadow: 10px 10px var(--dark-green);
   }
 
   .button-card.menus .main-img {
@@ -164,7 +160,7 @@
   }
 
   .button-card:hover .main-img {
-    transform: scale(0.9);
+    transform: scale(1.1);
   }
 
   @keyframes doodleFloat {
